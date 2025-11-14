@@ -8,6 +8,10 @@ signal damaged
 @export var orientation_speed: float = 20.0
 @onready var invulnerability_timer: Timer = $"Invulnerability Timer"
 
+@export_category("Game Juice")
+@export var shake_ammount: float = 0.2
+@export var shake_duration: float = 0.2
+var original_scale: Vector3
 
 var current_health: int
 
@@ -22,6 +26,7 @@ var touching_shockwave: bool = false:
 
 func _ready() -> void:
 	current_health = max_health
+	original_scale = $MeshInstance3D.scale
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 		AudioManager.play_jump_sound()
+		shake_player_mesh(4.0)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -74,3 +80,14 @@ func _on_shockwave_exited(_body: Node3D) -> void:
 
 func get_collected(type: Collectable.Type):
 	print(str(type)+" got collected")
+
+func shake_player_mesh(factor: float = 1.0):
+	var mesh: MeshInstance3D = $MeshInstance3D
+	var tween: Tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT)
+	tween.tween_property(mesh, "scale:y", original_scale.y + shake_ammount * factor, shake_duration / 4.0)
+	tween.tween_property(mesh, "scale:y", original_scale.y - shake_ammount * factor, shake_duration / 2.0)
+	tween.tween_property(mesh, "scale:y", original_scale.y, shake_duration / 4.0)
+
+func _on_steps_timer_timeout() -> void:
+	if is_on_floor() and Vector3(velocity.x, 0.0, velocity.z).length() > 0.0:
+		shake_player_mesh()
