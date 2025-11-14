@@ -1,3 +1,4 @@
+class_name Shock_Wave
 extends Node3D
 
 @onready var csg_torus: CSGTorus3D = $CSGTorus
@@ -11,3 +12,6 @@ func _physics_process(delta: float) -> void:
 	
 	csg_torus.inner_radius += ring_growth * delta
 	csg_torus.outer_radius += ring_growth * delta
+
+func _on_timer_timeout() -> void:
+	call_deferred("queue_free")
