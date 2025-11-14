@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfgcylsbp0md4"]
+[gd_scene load_steps=11 format=3 uid="uid://bfgcylsbp0md4"]
 
 [ext_resource type="Texture2D" uid="uid://bf1crmwxkea0i" path="res://icon.svg" id="1_abhxl"]
 [ext_resource type="PackedScene" uid="uid://dluav450y5end" path="res://Scenes/player.tscn" id="2_g54tn"]
 [ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/shock_wave_spawner.tscn" id="3_dc6q1"]
+[ext_resource type="Script" uid="uid://ceyhd1uym23s1" path="res://Scripts/camera.gd" id="3_q5m1e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g54tn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,8 +51,11 @@ shape = SubResource("BoxShape3D_qps05")
 [node name="Player" parent="." instance=ExtResource("2_g54tn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.67240554, 0.740183, 0, -0.740183, 0.67240554, 0, 3.970803, 5.0810966)
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.67240554, 0.740183, 0, -0.740183, 0.67240554, 0, 2.2539036, 2.420281)
+script = ExtResource("3_q5m1e")
+shake_ammount = 0.1
+shake_duration = 0.05
 
 [node name="Shock Wave Spawner" parent="." instance=ExtResource("3_dc6q1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
@@ -61,3 +65,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
 
 [node name="Shock Wave Spawner3" parent="." instance=ExtResource("3_dc6q1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[connection signal="damaged" from="Player" to="Player/Camera3D" method="shake"]

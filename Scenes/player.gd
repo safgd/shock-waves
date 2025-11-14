@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal damaged
+
 @export var max_health: int = 3
 @export var speed = 5.0
 @export var jump_velocity = 4.5
@@ -46,6 +48,7 @@ func _physics_process(delta: float) -> void:
 		invulnerability_timer.start()
 		
 func hurt_player(damage: int = 1):
+	damaged.emit()
 	current_health -= damage
 	if current_health <= 0:
 		get_tree().call_deferred("reload_current_scene")
