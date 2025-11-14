@@ -5,7 +5,9 @@ signal damaged
 @export var max_health: int = 3
 @export var speed = 5.0
 @export var jump_velocity = 4.5
+@export var orientation_speed: float = 20.0
 @onready var invulnerability_timer: Timer = $"Invulnerability Timer"
+
 
 var current_health: int
 
@@ -41,6 +43,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+
+	# orient player mesh torwards input direction
+	if direction != Vector3.ZERO:
+		var target_rotation_y: float = atan2(direction.x, direction.z)
+		$MeshInstance3D.rotation.y = lerp_angle($MeshInstance3D.rotation.y, target_rotation_y, orientation_speed * delta)
 
 	move_and_slide()
 	
