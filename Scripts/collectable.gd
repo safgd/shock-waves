@@ -1,6 +1,8 @@
 class_name Collectable
 extends Area3D
 
+signal collected
+
 enum Type{
 	COIN
 }
@@ -9,6 +11,7 @@ enum Type{
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
+		collected.emit()
 		body.get_collected(type)
 		match type:
 			Type.COIN:
