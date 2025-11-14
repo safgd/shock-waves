@@ -4,7 +4,6 @@
 
 [node name="Shock Wave" type="Node3D"]
 script = ExtResource("1_60xfj")
-ring_growth = 0.0
 
 [node name="CSGTorus" type="CSGTorus3D" parent="."]
 use_collision = true

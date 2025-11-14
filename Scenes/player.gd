@@ -1,19 +1,23 @@
 extends CharacterBody3D
 
-
+@export var max_health: int = 3
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
 @onready var invulnerability_timer: Timer = $"Invulnerability Timer"
 
+var current_health: int
 
 var touching_shockwave: bool = false:
 	set(value):
 		if value and not touching_shockwave:
-			print("damage")
+			hurt_player()
 			invulnerability_timer.start()
 		touching_shockwave = value
 	get():
 		return touching_shockwave
+
+func _ready() -> void:
+	current_health = max_health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -38,10 +42,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if touching_shockwave and invulnerability_timer.is_stopped():
-		print("damage")
+		hurt_player()
 		invulnerability_timer.start()
 		
-		
+func hurt_player(damage: int = 1):
+	current_health -= damage
+	if current_health <= 0:
+		get_tree().call_deferred("reload_current_scene")
+
+func heal_player(ammount: int = 1):
+	current_health = clampi(current_health+1, 0, max_health)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	touching_shockwave = true
