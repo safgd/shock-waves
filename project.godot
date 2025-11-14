@@ -11,5 +11,12 @@ config_version=5
 [application]
 
 config/name="Shock Waves"
+run/main_scene="uid://bfgcylsbp0md4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+3d_render/layer_4="Layer 4"
+3d_physics/layer_4="Shockwave"
+3d_physics/layer_5="Shockwave Detector"

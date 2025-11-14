@@ -1,9 +1,19 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export var SPEED = 5.0
+@export var JUMP_VELOCITY = 4.5
+@onready var invulnerability_timer: Timer = $"Invulnerability Timer"
 
+
+var touching_shockwave: bool = false:
+	set(value):
+		if value and not touching_shockwave:
+			print("damage")
+			invulnerability_timer.start()
+		touching_shockwave = value
+	get():
+		return touching_shockwave
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +36,15 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	if touching_shockwave and invulnerability_timer.is_stopped():
+		print("damage")
+		invulnerability_timer.start()
+		
+		
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	touching_shockwave = true
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	touching_shockwave = false
