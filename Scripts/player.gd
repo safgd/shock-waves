@@ -15,10 +15,16 @@ signal damaged
 
 @export_category("Setup")
 @export var ground: Ground
+@export var game_ui: Game_UI
 
 var original_scale: Vector3
 
-var current_health: int
+var current_health: int:
+	set(value):
+		current_health = value
+		game_ui.update_health_label(value)
+	get():
+		return current_health
 
 var touching_shockwave: bool = false:
 	set(value):
@@ -67,6 +73,9 @@ func _physics_process(delta: float) -> void:
 	if touching_shockwave and invulnerability_timer.is_stopped():
 		hurt_player()
 		invulnerability_timer.start()
+	
+	if global_position.y < -5.0:
+		hurt_player(5)
 		
 func hurt_player(damage: int = 1):
 	AudioManager.play_damaged_sound()

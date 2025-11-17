@@ -12,6 +12,9 @@ var multimesh: MultiMesh
 var marked_tiles: Dictionary[int, Timer] = {}
 
 func _ready():
+	if width % 2 == 1:
+		width += 1
+	
 	
 	AudioManager.audio_tick.connect(change_tile_color)
 	

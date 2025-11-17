@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm2aqjkuntn0h"]
+
+[ext_resource type="Script" uid="uid://baijmv0piok2n" path="res://Scripts/game_ui.gd" id="1_jxero"]
+[ext_resource type="LabelSettings" uid="uid://dm53gnks6pg5k" path="res://Assets/Label Settings/game_ui.tres" id="2_qdvrb"]
+
+[node name="Game UI" type="CanvasLayer"]
+script = ExtResource("1_jxero")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FPS Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "0 fps"
+label_settings = ExtResource("2_qdvrb")
+
+[node name="Health Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "0 HP"
+label_settings = ExtResource("2_qdvrb")
