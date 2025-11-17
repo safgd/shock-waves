@@ -32,6 +32,7 @@ func _ready():
 	change_tile_color()
 	
 	$CollisionShape3D.shape.size = Vector3(width, 1.0, width)
+	$CollisionShape3D/MeshInstance3D.mesh.size = Vector2(width, width)
 
 func change_tile_color():
 	for i in range(width*width):
