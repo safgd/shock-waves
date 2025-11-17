@@ -28,19 +28,18 @@ label_settings = ExtResource("2_8o61d")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "This game was made by me"
 label_settings = ExtResource("3_flhbk")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "With the Godot Engine"
+text = "Game made with the Godot Engine"
 label_settings = ExtResource("3_flhbk")
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Music is from Ovani"
+text = "Music and sound effects by Ovani Sound"
 label_settings = ExtResource("3_flhbk")
 horizontal_alignment = 1
 

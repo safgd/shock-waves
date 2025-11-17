@@ -13,6 +13,7 @@ func _on_spawn_wait_timer_timeout() -> void:
 	if spawn_ammount > 0:
 		var remaining_collectables_count: int = spawn_ammount
 		var remaining_spawn_positions: Array[Node3D] = spawn_positions.duplicate()
+		AudioManager.play_coin_spawn_sound()
 		for i in range(remaining_spawn_positions.size()):
 			if remaining_collectables_count <= 0:
 				return
@@ -27,6 +28,7 @@ func _on_spawn_wait_timer_timeout() -> void:
 			remaining_collectables_count -= 1
 			not_yet_collected_count += 1
 			collectable.collected.connect(register_collection)
+		
 
 func register_collection():
 	not_yet_collected_count -= 1

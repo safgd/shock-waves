@@ -22,5 +22,9 @@ func play_step_sound():
 		$"Step Sound Player".stream = step_audio_streams[randi() % step_audio_streams.size()]
 		$"Step Sound Player".play()
 
+func play_coin_spawn_sound():
+	$"Coin Spawn Sound Player".play()
+	print("----")
+
 func _on_world_tick_timeout() -> void:
 	audio_tick.emit()
