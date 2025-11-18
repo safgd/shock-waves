@@ -7,13 +7,14 @@
 [node name="Collectables Tutorial" instance=ExtResource("1_70nrm")]
 
 [node name="Ground" parent="." index="2"]
-width = 10
+width = 8
 
-[node name="Collectables" type="Node3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+[node name="Player" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.1388717)
+start_health = 1
 
 [node name="Health Collectable" parent="Collectables" index="0" instance=ExtResource("2_mh07x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 
 [node name="Label3D" type="Label3D" parent="Collectables/Health Collectable" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -21,7 +22,7 @@ text = "This one heals you"
 font_size = 64
 
 [node name="Coin Collectable" parent="Collectables" index="1" instance=ExtResource("3_u42v0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
 
 [node name="Label3D" type="Label3D" parent="Collectables/Coin Collectable" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

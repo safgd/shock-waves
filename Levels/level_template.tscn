@@ -47,3 +47,8 @@ game_ui = NodePath("../UI/Game UI")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.96163124, 0.27434525, 0, -0.27434525, 0.96163124, 0, 2.0883546, 3.9203765)
+
+[node name="Schock Wave Spawners" type="Node3D" parent="."]
+
+[node name="Collectables" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
