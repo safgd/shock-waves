@@ -122,6 +122,7 @@ func notify_shock_wave_spawner_placement(pos: Vector3):
 			marked_tiles.erase(pos_to_index(Vector3(pos.x, 0, pos.z+1)))
 
 func pos_to_index(pos: Vector3) -> int:
+	pos -= global_position
 	var x: int = floor(pos.x + 0.5 + width/2.0)
 	var z: int = floor(pos.z + 0.5 + width/2.0)
 	return x * width + z
