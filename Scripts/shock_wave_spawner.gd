@@ -11,17 +11,8 @@ func _ready() -> void:
 	$"Repating Shock Wave Timer".wait_time = interval
 	$"Initial Wait Timer".wait_time = initial_wait_time
 	$"Initial Wait Timer".start()
-	#if initial_wait_time <= 0.0:
-		#spawn_shock_wave()
-	#else:
-		#$"Repating Shock Wave Timer".stop()
-		#$"Initial Wait Timer".wait_time = initial_wait_time
-		#$"Initial Wait Timer".start()
-	
-	
 	
 	$"../../Ground".notify_shock_wave_spawner_placement(global_position)
-	print("init timer started")
 
 func _on_repating_shock_wave_timer_timeout() -> void:
 	spawn_shock_wave()
@@ -32,13 +23,11 @@ func spawn_shock_wave():
 	shock_wave.ring_growth = ring_growth_speed
 	shock_wave.global_position = global_position
 	shock_wave.global_rotation = global_rotation
-	print("repeating timer started")
 
 
 func _on_initial_wait_timer_timeout() -> void:
 	spawn_shock_wave()
 	$"Repating Shock Wave Timer".start()
-	print("init timer ended")
 
 func _on_trigger(active: bool):
 	if active:
