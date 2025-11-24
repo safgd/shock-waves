@@ -1,3 +1,4 @@
+@tool
 class_name Ground
 extends StaticBody3D
 ## Floor tiles randomly change to these colors
@@ -7,9 +8,16 @@ extends StaticBody3D
 @export var marked_duration: float = 0.3
 @export var mesh: Mesh
 ## If an uneven number is entered, it will be increased by one to become even.
-@export var width: int = 18
-@export var length: int = 18
-
+@export var width: int = 18:
+	set(value):
+		width = value
+		$CollisionShape3D.scale.x = value
+		$MeshInstance3D.scale.x = value
+@export var length: int = 18:
+	set(value):
+		length = value
+		$CollisionShape3D.scale.z = value
+		$MeshInstance3D.scale.z = value
 
 var multimesh: MultiMesh
 
@@ -40,7 +48,6 @@ func _ready():
 		global_position.x += 0.5
 	if length % 2 == 1:
 		global_position.z += 0.5
-
 	
 	AudioManager.audio_tick.connect(change_tile_color)
 	
@@ -72,8 +79,8 @@ func _ready():
 	
 	change_tile_color()
 	
-	$CollisionShape3D.shape.size = Vector3(width, 1.0, length)
-	$MeshInstance3D.mesh.size = Vector2(width, length)
+	#$CollisionShape3D.scale = Vector3(width, 1.0, length)
+	#$MeshInstance3D.scale = Vector3(width, 1.0, length)
 
 func change_tile_color():
 	for i in range(width*length):

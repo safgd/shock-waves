@@ -4,14 +4,13 @@
 [ext_resource type="BoxMesh" uid="uid://bmbj1nqatyiqr" path="res://Assets/Meshes/floor_tile.tres" id="3_s6h8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oltiy"]
-size = Vector3(18, 1, 18)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_688p1"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oltiy"]
 material = SubResource("StandardMaterial3D_688p1")
-size = Vector2(18, 18)
+size = Vector2(1, 1)
 
 [node name="Ground" type="StaticBody3D"]
 script = ExtResource("1_02qk3")
