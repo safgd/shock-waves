@@ -29,12 +29,17 @@ enum Mode{
 ## When mode is ACTIVATING, this option decides if how many floor tiles around shock wave spawners should be pre-colored.
 @export var pre_color_extended: bool = true
 
+var level: Level
+
 func _ready():
 	
+	level = get_parent().get_parent()
+	level.register_to_be_completed_ground()
+	
 	if width % 2 == 1:
-		global_position.x = 0.5
+		global_position.x += 0.5
 	if length % 2 == 1:
-		global_position.z = 0.5
+		global_position.z += 0.5
 
 	
 	AudioManager.audio_tick.connect(change_tile_color)
@@ -102,8 +107,9 @@ func overwrite_tile_color(pos: Vector3):
 				multimesh.set_instance_color(i, color)
 				
 				if marked_tiles.size() <= 0:
-					print("won")
-					$"..".win_condition_fulfilled()
+					#print("won")
+					#$"..".win_condition_fulfilled()
+					level.register_completed_ground()
 			else:
 				pass
 	

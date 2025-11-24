@@ -5,8 +5,8 @@ signal damaged
 @export_category("Stats")
 @export var max_health: int = 3
 @export var start_health: int = -1
-@export var speed = 5.0
-@export var jump_velocity = 4.5
+@export var speed: float = 5.0
+@export var jump_velocity: float = 4.5
 @export var orientation_speed: float = 20.0
 @onready var invulnerability_timer: Timer = $"Invulnerability Timer"
 
@@ -15,7 +15,6 @@ signal damaged
 @export var shake_duration: float = 0.2
 
 @export_category("Setup")
-@export var ground: Ground
 @export var game_ui: Game_UI
 
 var original_scale: Vector3
@@ -54,8 +53,13 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	elif ground:
-		ground.overwrite_tile_color(global_position)
+	else:
+		$"Ground Check Raycast".enabled = true
+		$"Ground Check Raycast".force_raycast_update()
+		var collider = $"Ground Check Raycast".get_collider()
+		if collider and collider is Ground:
+			collider.overwrite_tile_color(global_position)
+		$"Ground Check Raycast".enabled = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

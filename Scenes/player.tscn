@@ -41,6 +41,9 @@ one_shot = true
 wait_time = 0.2
 autostart = true
 
+[node name="Ground Check Raycast" type="RayCast3D" parent="."]
+enabled = false
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_shockwave_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_shockwave_exited"]
 [connection signal="timeout" from="Steps Timer" to="." method="_on_steps_timer_timeout"]

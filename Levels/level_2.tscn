@@ -7,9 +7,9 @@
 
 [node name="Level 2" instance=ExtResource("1_ll1bl")]
 
-[node name="Ground" parent="." index="2"]
-width = 8
-length = 8
+[node name="Ground" parent="Grounds" index="0"]
+width = 7
+length = 7
 
 [node name="Player" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
