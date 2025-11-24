@@ -32,5 +32,6 @@ func _on_initial_wait_timer_timeout() -> void:
 func _on_trigger(active: bool):
 	if active:
 		$"Repating Shock Wave Timer".stop()
+		$"Initial Wait Timer".stop()
 	else:
 		$"Repating Shock Wave Timer".start()
