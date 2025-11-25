@@ -34,8 +34,8 @@ enum Mode{
 @export var colored_borders: bool = true
 ## When mode is ACTIVATING, this option decides if floor tiles around shock wave spawners should be pre-colored.
 @export var pre_color_around_spawners: bool = true
-## When mode is ACTIVATING, this option decides if how many floor tiles around shock wave spawners should be pre-colored.
-@export var pre_color_extended: bool = true
+### When mode is ACTIVATING, this option decides if how many floor tiles around shock wave spawners should be pre-colored.
+#@export var pre_color_extended: bool = true
 
 var level: Level
 
@@ -128,7 +128,7 @@ func _on_marked_tile_timer_timeout(i: int):
 	marked_tiles.erase(i)
 	timer.call_deferred("queue_free")
 
-func notify_shock_wave_spawner_placement(pos: Vector3):
+func notify_pre_marking(pos: Vector3, pre_color_extended: bool = false):
 	if mode == Mode.ACTIVATING and pre_color_around_spawners:
 		marked_tiles.erase(pos_to_index(pos))
 		if pre_color_extended:

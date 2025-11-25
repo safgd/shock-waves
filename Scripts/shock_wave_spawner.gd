@@ -12,11 +12,7 @@ func _ready() -> void:
 	$"Initial Wait Timer".wait_time = initial_wait_time
 	$"Initial Wait Timer".start()
 	
-	$"Ground Check Raycast".force_raycast_update()
-	var collider = $"Ground Check Raycast".get_collider()
-	if collider and collider is Ground:
-		collider.notify_shock_wave_spawner_placement(global_position)
-	$"Ground Check Raycast".call_deferred("queue_free")
+	
 
 func _on_repating_shock_wave_timer_timeout() -> void:
 	spawn_shock_wave()

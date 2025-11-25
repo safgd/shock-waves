@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gleir6t2rxqq"]
 
 [ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_5lru4"]
-[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/shock_wave_spawner.tscn" id="2_ej5lj"]
+[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="2_ej5lj"]
 
 [node name="Level 3" instance=ExtResource("1_5lru4")]
 

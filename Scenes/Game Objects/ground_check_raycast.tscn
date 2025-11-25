@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpsppyk2nx6a6"]
+
+[ext_resource type="Script" uid="uid://ckwi8xk38a4lg" path="res://Scripts/ground_check_raycast.gd" id="1_jc8ev"]
+
+[node name="Ground Check Raycast" type="RayCast3D"]
+enabled = false
+script = ExtResource("1_jc8ev")

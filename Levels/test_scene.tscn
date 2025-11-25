@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_dfwtf"]
 [ext_resource type="PackedScene" uid="uid://dluav450y5end" path="res://Scenes/player.tscn" id="2_g54tn"]
-[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/shock_wave_spawner.tscn" id="3_dc6q1"]
+[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="3_dc6q1"]
 [ext_resource type="Script" uid="uid://ceyhd1uym23s1" path="res://Scripts/camera.gd" id="3_q5m1e"]
 [ext_resource type="PackedScene" uid="uid://cm2aqjkuntn0h" path="res://Scenes/game_ui.tscn" id="5_d6kn1"]
 [ext_resource type="PackedScene" uid="uid://csl17lkggtans" path="res://Scenes/Menus/pause_menu.tscn" id="5_dfwtf"]

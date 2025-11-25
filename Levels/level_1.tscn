@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv1spt88lf0jr"]
 
 [ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_rf6l5"]
-[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/shock_wave_spawner.tscn" id="2_syshm"]
+[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="2_syshm"]
 [ext_resource type="PackedScene" uid="uid://cheeey5c78fnh" path="res://Scenes/Collectables/health_collectable.tscn" id="3_rfktq"]
 [ext_resource type="PackedScene" uid="uid://wiv3mxvsbb5f" path="res://Scenes/Collectables/coin_collectable.tscn" id="4_0urlm"]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_e78ah"]
 [ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_e78ah"]
-[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/shock_wave_spawner.tscn" id="2_nsqb1"]
+[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="2_nsqb1"]
 [ext_resource type="PackedScene" uid="uid://wiv3mxvsbb5f" path="res://Scenes/Collectables/coin_collectable.tscn" id="3_nsqb1"]
 
 [node name="Level 4" instance=ExtResource("1_e78ah")]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba1lhlowv02v7"]
+[gd_scene load_steps=7 format=3 uid="uid://ba1lhlowv02v7"]
 
 [ext_resource type="Script" uid="uid://bgps5jalpgvtw" path="res://Scripts/shock_wave_spawner.gd" id="1_5a1a6"]
-[ext_resource type="PackedScene" uid="uid://cejxqbneuohe0" path="res://Scenes/shock_wave.tscn" id="2_u1nf7"]
+[ext_resource type="PackedScene" uid="uid://cejxqbneuohe0" path="res://Scenes/Game Objects/shock_wave.tscn" id="2_u1nf7"]
+[ext_resource type="PackedScene" uid="uid://dpsppyk2nx6a6" path="res://Scenes/Game Objects/ground_check_raycast.tscn" id="3_mt0yn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6h6s"]
 albedo_color = Color(1, 0.627451, 1, 1)
@@ -30,7 +31,8 @@ shape = SubResource("CylinderShape3D_u1nf7")
 [node name="Initial Wait Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Ground Check Raycast" type="RayCast3D" parent="."]
+[node name="Ground Check Raycast" parent="." instance=ExtResource("3_mt0yn")]
+pre_color_extended = true
 
 [connection signal="timeout" from="Repating Shock Wave Timer" to="." method="_on_repating_shock_wave_timer_timeout"]
 [connection signal="timeout" from="Initial Wait Timer" to="." method="_on_initial_wait_timer_timeout"]
