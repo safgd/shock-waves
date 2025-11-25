@@ -20,6 +20,9 @@ func toggle_music():
 func play_jump_sound():
 	$"Jump Sound Player".play()
 
+func play_jump_pad_sound():
+	$"Jump Pad Sound Player".play()
+
 func play_damaged_sound():
 	$"Damaged Sound Player".play()
 

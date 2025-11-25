@@ -63,9 +63,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity
-		AudioManager.play_jump_sound()
-		shake_player_mesh(4.0)
+		perform_jump(jump_velocity)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -91,7 +89,13 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.y < -5.0:
 		hurt_player(5)
-		
+
+func perform_jump(jump_vel: float, mute_player_jump_sound: bool = false):
+	velocity.y = jump_vel
+	shake_player_mesh(4.0)
+	if not mute_player_jump_sound:
+		AudioManager.play_jump_sound()
+
 func hurt_player(damage: int = 1):
 	AudioManager.play_damaged_sound()
 	damaged.emit()

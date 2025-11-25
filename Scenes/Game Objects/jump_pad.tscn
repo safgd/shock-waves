@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmdkv5nr6xt8m"]
+
+[ext_resource type="PackedScene" uid="uid://dpsppyk2nx6a6" path="res://Scenes/Game Objects/ground_check_raycast.tscn" id="1_uu1ni"]
+[ext_resource type="Script" uid="uid://b3nvsgo172rgk" path="res://Scripts/jump_pad.gd" id="1_wu30w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wu30w"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jrw0u"]
+height = 1.0
+radius = 0.4
+
+[node name="Jump Pad" type="Area3D"]
+script = ExtResource("1_wu30w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21951354, 0)
+mesh = SubResource("CylinderMesh_wu30w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21951354, 0)
+shape = SubResource("CylinderShape3D_jrw0u")
+
+[node name="Ground Check Raycast" parent="." instance=ExtResource("1_uu1ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12100333, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
