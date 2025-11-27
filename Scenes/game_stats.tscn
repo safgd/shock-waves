@@ -5,6 +5,6 @@
 [node name="Game Stats" type="Node"]
 script = ExtResource("1_ex7ht")
 opened_levels = Dictionary[String, bool]({
-"res://Levels/collectables_tutorial.tscn": true,
+"res://Levels/level_collectables_tutorial.tscn": true,
 "res://Levels/level_tutorial.tscn": true
 })

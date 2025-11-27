@@ -2,6 +2,11 @@
 class_name Level_Entry
 extends Area3D
 
+@export var coin_cost: int = 1:
+	set(value):
+		coin_cost = value
+		update_speach_bubble()
+
 @export var open: bool = false:
 	set(value):
 		open = value
@@ -32,17 +37,28 @@ func _on_body_entered(body: Node3D) -> void:
 		#get_tree().call_deferred("change_scene_to_file", level_scene_path)
 			SceneLoader.change_to_scene_async(get_parent().get_parent(), level_scene_path)
 		else:
-			print("can't enter")
+			if GameStats.coins >= coin_cost:
+				GameStats.pay_with_coins(coin_cost)
+				GameStats.unlock_level(level_scene_path)
+				open = true
+				SceneLoader.change_to_scene_async(get_parent().get_parent(), level_scene_path)
 		
 
 func _ready() -> void:
-	open = not GameStats.is_level_open(level_scene_path)
+	open = GameStats.is_level_open(level_scene_path)
 	
 	$Label3D.text = level_name
 	if open:
 		$Sprite3D.position = $"Bouncer 2nd Pos".position
+		$Sprite3D/Sprite3D.hide()
 	else:
 		$Sprite3D.position = $"Bouncer Door Pos".position
 
 func get_player_spawn_pos() -> Vector3:
 	return $"Player Spawn Pos".global_position
+
+func update_speach_bubble():
+	if coin_cost == 1:
+		$Sprite3D/Sprite3D/Label3D.text = "Entry Cost:\n" + str(coin_cost) + " Coin"
+	else:
+		$Sprite3D/Sprite3D/Label3D.text = "Entry Cost:\n" + str(coin_cost) + " Coins"
