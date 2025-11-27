@@ -36,7 +36,6 @@ func _on_hub_world_button_pressed() -> void:
 	AudioManager.play_button_click_sound()
 	get_tree().paused = false
 	visible = false
-	#get_tree().call_deferred("change_scene_to_file", hub_world_scene_path)
 	SceneLoader.change_to_scene_async(self, hub_world_scene_path)
 
 func _on_home_screen_button_pressed() -> void:

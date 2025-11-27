@@ -5,7 +5,6 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameStats.world_hub = self
-	#SceneLoader.world_hub_scene_path = scene_file_path
 	if GameStats.last_level_path.begins_with("res://Levels/level"):
 		var level_entry: Level_Entry = get_level_entry(GameStats.last_level_path)
 		GameStats.last_level_path = ""
