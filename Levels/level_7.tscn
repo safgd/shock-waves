@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://debbdvo4v02nj"]
+
+[ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_bh5jb"]
+[ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_3nw2h"]
+[ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="3_0musb"]
+[ext_resource type="PackedScene" uid="uid://wiv3mxvsbb5f" path="res://Scenes/Collectables/coin_collectable.tscn" id="4_74s8n"]
+
+[node name="Level 7" instance=ExtResource("1_bh5jb")]
+
+[node name="Ground" parent="Grounds" index="0"]
+width = 5
+length = 5
+
+[node name="Ground2" parent="Grounds" index="1" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+width = 5
+length = 3
+
+[node name="Ground3" parent="Grounds" index="2" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 0)
+width = 5
+length = 1
+
+[node name="Ground12" parent="Grounds" index="3" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -1)
+width = 5
+length = 1
+
+[node name="Ground13" parent="Grounds" index="4" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 1)
+width = 5
+length = 1
+
+[node name="Ground4" parent="Grounds" index="5" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 0)
+width = 7
+length = 3
+
+[node name="Ground5" parent="Grounds" index="6" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+width = 20
+length = 1
+
+[node name="Ground6" parent="Grounds" index="7" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 1)
+width = 20
+length = 1
+
+[node name="Ground7" parent="Grounds" index="8" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1)
+width = 20
+length = 1
+
+[node name="Ground11" parent="Grounds" index="9" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.4645519, 0)
+width = 1
+length = 1
+
+[node name="Ground14" parent="Grounds" index="10" instance=ExtResource("2_3nw2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.4642303, 0)
+width = 1
+length = 1
+
+[node name="Camera3D" parent="Player" index="7"]
+transform = Transform3D(1, 0, 0, 0, 0.94305444, 0.33263847, 0, -0.33263847, 0.94305444, 0, 3.4655924, 5.2634783)
+
+[node name="Shock Wave Spawner" parent="Schock Wave Spawners" index="0" instance=ExtResource("3_0musb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.4704535, 0)
+initial_wait_time = 0.1
+ring_growth_speed = 1.5
+
+[node name="Shock Wave Spawner2" parent="Schock Wave Spawners" index="1" instance=ExtResource("3_0musb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.4704535, 0)
+initial_wait_time = 4.1
+ring_growth_speed = 1.5
+
+[node name="Shock Wave Spawner3" parent="Schock Wave Spawners" index="2" instance=ExtResource("3_0musb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.4704535, 0)
+initial_wait_time = 0.1
+ring_growth_speed = 1.5
+
+[node name="Shock Wave Spawner4" parent="Schock Wave Spawners" index="3" instance=ExtResource("3_0musb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.4704535, 0)
+initial_wait_time = 4.1
+ring_growth_speed = 1.5
+
+[node name="Coin Collectable" parent="Collectables" index="0" instance=ExtResource("4_74s8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Coin Collectable2" parent="Collectables" index="1" instance=ExtResource("4_74s8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)

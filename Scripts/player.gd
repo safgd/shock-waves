@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 signal damaged
@@ -131,3 +132,7 @@ func _on_steps_timer_timeout() -> void:
 	if is_on_floor() and Vector3(velocity.x, 0.0, velocity.z).length() > 0.0:
 		shake_player_mesh()
 		AudioManager.play_step_sound()
+
+func add_hat(hat: Shop_Item):
+	hat.call_deferred("reparent",$Hats, false)
+	hat.position = Vector3.ZERO

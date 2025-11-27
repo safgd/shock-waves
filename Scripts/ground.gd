@@ -23,6 +23,8 @@ var multimesh: MultiMesh
 
 var marked_tiles: Dictionary = {}
 
+var completion_signaled: bool = false
+
 enum Mode{
 	MARKING_WHITE,
 	ACTIVATING
@@ -44,7 +46,10 @@ func _ready():
 		return
 	
 	level = get_parent().get_parent()
-	level.register_to_be_completed_ground()
+	if width > 2 and length > 2:
+		level.register_to_be_completed_ground()
+	else:
+		completion_signaled = true
 	
 	if width % 2 == 1:
 		global_position.x += 0.5
@@ -139,8 +144,9 @@ func notify_pre_marking(pos: Vector3, pre_color_extended: bool = false):
 			marked_tiles.erase(pos_to_index(Vector3(pos.x, 0, pos.z-1)))
 			marked_tiles.erase(pos_to_index(Vector3(pos.x, 0, pos.z+1)))
 		
-		if marked_tiles.size() <= 0:
+		if marked_tiles.size() <= 0 and not completion_signaled:
 			level.register_completed_ground()
+			completion_signaled = true
 
 func pos_to_index(pos: Vector3) -> int:
 	pos -= global_position

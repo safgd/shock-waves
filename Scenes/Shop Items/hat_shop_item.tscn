@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cigovqa4057km"]
+
+[ext_resource type="PackedScene" uid="uid://on1x6yndno1l" path="res://Scenes/Shop Items/shop_item_template.tscn" id="1_mqsqk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cnjfl"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.1
+
+[node name="Hat Shop Item" instance=ExtResource("1_mqsqk")]
+coin_cost = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("CylinderMesh_cnjfl")

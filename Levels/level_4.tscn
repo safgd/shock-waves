@@ -31,5 +31,9 @@ length = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 initial_wait_time = 2.0
 
+[node name="Shock Wave Spawner3" parent="Schock Wave Spawners" index="1" instance=ExtResource("2_nsqb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -4)
+initial_wait_time = 6.0
+
 [node name="Coin Collectable" parent="Collectables" index="0" instance=ExtResource("3_nsqb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)

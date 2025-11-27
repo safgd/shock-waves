@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct0wnptbh06xq"]
+
+[ext_resource type="Script" uid="uid://bbml20vp64og7" path="res://Scripts/outfit_shop.gd" id="1_jog4j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhoav"]
+size = Vector3(4, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jog4j"]
+size = Vector3(4, 0.5, 1)
+
+[node name="Outfit Shop" type="StaticBody3D"]
+script = ExtResource("1_jog4j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_lhoav")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_jog4j")
+
+[node name="Item Slots" type="Node" parent="."]
+
+[node name="Item Slot" type="Node3D" parent="Item Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0)
+
+[node name="Item Slot2" type="Node3D" parent="Item Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
+
+[node name="Item Slot3" type="Node3D" parent="Item Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+
+[node name="Item Slot4" type="Node3D" parent="Item Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)

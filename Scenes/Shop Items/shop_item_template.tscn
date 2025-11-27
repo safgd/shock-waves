@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://on1x6yndno1l"]
+
+[ext_resource type="Script" uid="uid://bqmkiaikutx2w" path="res://Scripts/shop_item.gd" id="1_mgt2c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rmjdj"]
+
+[node name="Shop Item Template" type="Area3D"]
+script = ExtResource("1_mgt2c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_rmjdj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

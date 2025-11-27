@@ -36,7 +36,7 @@ func _on_body_entered(body: Node3D) -> void:
 		
 
 func _ready() -> void:
-	open = GameStats.is_level_open(level_scene_path)
+	open = not GameStats.is_level_open(level_scene_path)
 	
 	$Label3D.text = level_name
 	if open:
