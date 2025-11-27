@@ -1,5 +1,7 @@
 extends Node
 
+#var world_hub_scene_path: String
+
 func change_to_scene_async(current_scene, scene_path: String):
 	ResourceLoader.load_threaded_request(scene_path)
 	var status = ResourceLoader.load_threaded_get_status(scene_path)
@@ -10,4 +12,6 @@ func change_to_scene_async(current_scene, scene_path: String):
 
 	var scene: PackedScene = ResourceLoader.load_threaded_get(scene_path)
 	get_tree().change_scene_to_packed(scene)
+	
+
 	

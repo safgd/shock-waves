@@ -22,6 +22,12 @@ GraphicsSettings="*res://Scenes/graphics_settings.tscn"
 SceneLoader="*res://Scenes/scene_loader.tscn"
 GameStats="*res://Scenes/game_stats.tscn"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
+
 [input]
 
 ui_left={

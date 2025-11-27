@@ -43,3 +43,6 @@ func _ready() -> void:
 		$Sprite3D.position = $"Bouncer 2nd Pos".position
 	else:
 		$Sprite3D.position = $"Bouncer Door Pos".position
+
+func get_player_spawn_pos() -> Vector3:
+	return $"Player Spawn Pos".global_position
