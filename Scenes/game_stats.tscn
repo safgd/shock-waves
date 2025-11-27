@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cik0j3u4ytakp"]
+
+[ext_resource type="Script" uid="uid://cpb8f7o2kwlnv" path="res://Scripts/game_stats.gd" id="1_ex7ht"]
+
+[node name="Game Stats" type="Node"]
+script = ExtResource("1_ex7ht")
+opened_levels = Dictionary[String, bool]({
+"res://Levels/collectables_tutorial.tscn": true,
+"res://Levels/level_tutorial.tscn": true
+})
