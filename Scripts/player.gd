@@ -107,12 +107,12 @@ func _on_shockwave_entered(_body: Node3D) -> void:
 func _on_shockwave_exited(_body: Node3D) -> void:
 	touching_shockwave = false
 
-func get_collected(type: Collectable.Type):
+func get_collected(type: Collectable.Type, ammount: float):
 	match type:
 		Collectable.Type.COIN:
 			pass
 		Collectable.Type.HEALTH:
-			heal_player(1)
+			heal_player(int(ammount))
 
 func shake_player_mesh(factor: float = 1.0):
 	var mesh: MeshInstance3D = $MeshInstance3D

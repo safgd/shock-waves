@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_bh5jb"]
 [ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_3nw2h"]
 [ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="3_0musb"]
-[ext_resource type="PackedScene" uid="uid://wiv3mxvsbb5f" path="res://Scenes/Collectables/coin_collectable.tscn" id="4_74s8n"]
+[ext_resource type="PackedScene" uid="uid://cm6v2ap8lm3vc" path="res://Scenes/Collectables/half_coin_collectable.tscn" id="4_74s8n"]
 
 [node name="Level 7" instance=ExtResource("1_bh5jb")]
 
@@ -84,8 +84,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.4704535, 0)
 initial_wait_time = 4.1
 ring_growth_speed = 1.5
 
-[node name="Coin Collectable" parent="Collectables" index="0" instance=ExtResource("4_74s8n")]
+[node name="Half Coin Collectable" parent="Collectables" index="0" instance=ExtResource("4_74s8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
-[node name="Coin Collectable2" parent="Collectables" index="1" instance=ExtResource("4_74s8n")]
+[node name="Half Coin Collectable2" parent="Collectables" index="1" instance=ExtResource("4_74s8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)

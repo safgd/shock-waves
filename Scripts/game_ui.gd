@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 func update_health_label(health_points: int):
 	health_label.text = str(health_points) + " HP"
 
-func update_total_coin_count_label(coin_count: int):
+func update_total_coin_count_label(coin_count: float):
 	total_coins_label.text = str(coin_count) + " Coins"
 	
 func _input(event):

@@ -4,7 +4,7 @@ extends Node
 var world_hub: World_Hub
 var game_ui: Game_UI
 
-var coins: int = 0:
+var coins: float = 0:
 	set(value):
 		coins = value
 		if world_hub:
@@ -28,16 +28,15 @@ func unlock_level(level_path: String):
 func was_coin_collected(level_scene_path: String, coin_name: String):
 	return collected_specific_coins.has(level_scene_path + coin_name)
 
-func add_coin(level_scene_path: String, coin_name: String):
+func add_coin(level_scene_path: String, coin_name: String, ammount: float):
 	collected_specific_coins[level_scene_path + coin_name] = true
-	print("scene_path: " + level_scene_path + "    coin_name: "+ coin_name)
-	coins += 1
+	coins += ammount
 	if world_hub:
 		world_hub.get_game_ui().update_total_coin_count_label(coins)
 	else:
 		game_ui.update_total_coin_count_label(coins)
 
-func pay_with_coins(amount: int) -> bool:
+func pay_with_coins(amount: float) -> bool:
 	if amount <= coins:
 		coins -= amount
 		return true

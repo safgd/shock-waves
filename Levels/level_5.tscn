@@ -13,22 +13,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 width = 3
 length = 11
 
-[node name="Ground2" parent="Grounds" index="1" instance=ExtResource("2_pses1")]
+[node name="Ground4" parent="Grounds" index="1" instance=ExtResource("2_pses1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12)
+pre_color_every_tile = true
+width = 3
+length = 4
+
+[node name="Ground2" parent="Grounds" index="2" instance=ExtResource("2_pses1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -7)
 width = 5
 length = 5
 
-[node name="Ground3" parent="Grounds" index="2" instance=ExtResource("2_pses1")]
+[node name="Ground3" parent="Grounds" index="3" instance=ExtResource("2_pses1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, -7)
 width = 5
 length = 5
 
 [node name="Player" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 12)
 
 [node name="Shock Wave Spawner" parent="Schock Wave Spawners" index="0" instance=ExtResource("3_321yd")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2, -4)
+transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, 0, -4.371139e-08, -1, 0.70710677, 0.70710677, -3.090862e-08, -2, 3, 7)
 initial_wait_time = 0.01
+
+[node name="Shock Wave Spawner2" parent="Schock Wave Spawners" index="1" instance=ExtResource("3_321yd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, -7)
+interval = 4.0
+ring_growth_speed = 2.0
 
 [node name="Coin Collectable" parent="Collectables" index="0" instance=ExtResource("3_ki7po")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -4)
