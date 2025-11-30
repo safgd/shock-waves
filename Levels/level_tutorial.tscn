@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyyyaayax0a6a"]
+[gd_scene load_steps=3 format=3 uid="uid://dyyyaayax0a6a"]
 
 [ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_u88ni"]
+[ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_5rd0k"]
 
 [node name="Level Tutorial" instance=ExtResource("1_u88ni")]
 
-[node name="Ground" parent="Grounds" index="0"]
+[node name="Ground2" parent="Grounds" index="1" instance=ExtResource("2_5rd0k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+pre_color_every_tile = true
 width = 6
 length = 6
 

@@ -4,6 +4,7 @@ extends StaticBody3D
 ## Floor tiles randomly change to these colors
 @export var random_colors: Array[Color]
 ## The color of marked floor tiles, the mode is 'MARKING_WHITE'
+@export var pre_color_every_tile: bool = false
 @export var marking_color: Color = Color(1.0, 1.0, 1.0, 1.0)
 @export var marked_duration: float = 0.3
 @export var mesh: Mesh
@@ -46,7 +47,7 @@ func _ready():
 		return
 	
 	level = get_parent().get_parent()
-	if width > 2 and length > 2:
+	if width > 2 and length > 2 and not pre_color_every_tile:
 		level.register_to_be_completed_ground()
 	else:
 		completion_signaled = true
@@ -73,7 +74,7 @@ func _ready():
 			var mesh_transform = Transform3D(Basis(), Vector3(x-(width)/2.0, -0.49, z-(length)/2.0))  # Setze Position
 			multimesh.set_instance_transform(counter, mesh_transform)
 			
-			if mode == Mode.ACTIVATING:
+			if mode == Mode.ACTIVATING and not pre_color_every_tile:
 				if not (x == 0 or x == width -1 or z == 0 or z == length -1) or not colored_borders:
 					marked_tiles[counter] = 0
 			counter += 1
