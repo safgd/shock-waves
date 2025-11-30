@@ -56,6 +56,9 @@ func play_stomp_landing_sound():
 func play_coin_spawn_sound():
 	$"Coin Spawn Sound Player".play()
 
+func play_broken_glass_sound():
+	$"Broken Glass Sound Player".play()
+
 func play_marking_sound():
 	$"Marking Sound Player".play()
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ym0cute1516x"]
+
+[ext_resource type="Script" uid="uid://ccfh4rlpe0nul" path="res://Scripts/breakable_floor.gd" id="1_40gq6"]
+[ext_resource type="Material" uid="uid://bulpdjs3nw10q" path="res://Assets/Materials/collected_coin_collectable.tres" id="1_noqko"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_40gq6"]
+material = ExtResource("1_noqko")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bv5id"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ej3ju"]
+size = Vector3(1, 1.0430908, 1)
+
+[node name="Breakable Floor" type="StaticBody3D"]
+script = ExtResource("1_40gq6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_40gq6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_bv5id")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86533356, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20745635, 0)
+shape = SubResource("BoxShape3D_ej3ju")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
