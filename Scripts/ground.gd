@@ -122,7 +122,9 @@ func overwrite_tile_color(pos: Vector3, by_player: bool = false):
 				multimesh.set_instance_color(i, color)
 				
 				if marked_tiles.size() <= 0:
-					level.register_completed_ground()
+					if not completion_signaled:
+						level.register_completed_ground()
+						completion_signaled = true
 				
 				if by_player:
 					AudioManager.play_marking_sound()
