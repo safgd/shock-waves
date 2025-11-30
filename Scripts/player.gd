@@ -52,6 +52,8 @@ func _ready() -> void:
 		current_health = max_health
 	original_scale = $MeshInstance3D.scale
 
+	
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -68,9 +70,11 @@ func _physics_process(delta: float) -> void:
 				collider.overwrite_tile_color(global_position, true)
 			elif state == State.STOMPING:
 				collider.notify_circle_marking(global_position)
-				print("stomp ended")
 		$"Ground Check Raycast".enabled = false
-		state = State.DEFAULT
+		if state == State.STOMPING:
+			state = State.DEFAULT
+			$"Spark Particles".global_position = Vector3(global_position.x, global_position.y-0.5, global_position.z)
+			$"Spark Particles".emitting = true
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):
@@ -87,9 +91,12 @@ func _physics_process(delta: float) -> void:
 	if state == State.DEFAULT and direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		$"Smoke Particles".emitting = is_on_floor()
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		$"Smoke Particles".emitting = false
 
 	# orient player mesh torwards input direction
 	if direction != Vector3.ZERO:
@@ -112,7 +119,6 @@ func perform_jump(jump_vel: float, mute_player_jump_sound: bool = false):
 		AudioManager.play_jump_sound()
 
 func perform_stomp():
-	print("stomp ")
 	state = State.STOMPING
 	pass
 

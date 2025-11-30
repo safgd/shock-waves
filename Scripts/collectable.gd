@@ -28,8 +28,10 @@ func _on_body_entered(body: Node3D) -> void:
 		match type:
 			Type.COIN:
 				AudioManager.play_coin_sound()
+				ParticleManager.spawn_spark_particles(global_position)
 				if not GameStats.was_coin_collected(level_scene_path, name):
 					GameStats.add_coin(level_scene_path, name, ammount)
 			Type.HEALTH:
 				AudioManager.play_heal_item_sound()
+				ParticleManager.spawn_red_spark_particles(global_position)
 		call_deferred("queue_free")

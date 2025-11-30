@@ -21,6 +21,7 @@ AudioManager="*res://Scenes/audio_manager.tscn"
 GraphicsSettings="*res://Scenes/graphics_settings.tscn"
 SceneLoader="*res://Scenes/scene_loader.tscn"
 GameStats="*res://Scenes/game_stats.tscn"
+ParticleManager="*res://Scenes/particle_manager.tscn"
 
 [input]
 
