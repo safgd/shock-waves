@@ -149,6 +149,16 @@ func notify_pre_marking(pos: Vector3, pre_color_extended: bool = false):
 			level.register_completed_ground()
 			completion_signaled = true
 
+func notify_circle_marking(pos: Vector3):
+	if mode == Mode.ACTIVATING:
+		for x in range(-1,2):
+			for z in range(-1,2):
+				overwrite_tile_color(Vector3(pos.x+x, 0, pos.z+z))
+	
+	if marked_tiles.size() <= 0 and not completion_signaled:
+		level.register_completed_ground()
+		completion_signaled = true
+			
 func pos_to_index(pos: Vector3) -> int:
 	pos -= global_position
 	var x: int = floor(pos.x + 0.5 + width/2.0)

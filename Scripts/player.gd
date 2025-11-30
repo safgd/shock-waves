@@ -10,6 +10,8 @@ signal damaged
 @export var jump_velocity: float = 4.5
 @export var orientation_speed: float = 20.0
 @onready var invulnerability_timer: Timer = $"Invulnerability Timer"
+@export var stomp_speed: float = 12.0
+@export var stomp_rise_cap: float = 0.2  
 
 @export_category("Game Juice")
 @export var shake_ammount: float = 0.2
@@ -19,6 +21,13 @@ signal damaged
 @export var game_ui: Game_UI
 
 var original_scale: Vector3
+
+enum State{
+	DEFAULT,
+	STOMPING
+}
+
+var state: State = State.DEFAULT
 
 var current_health: int:
 	set(value):
@@ -46,24 +55,36 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if state == State.DEFAULT:
+			velocity += get_gravity() * delta
+		elif state == State.STOMPING:
+			velocity.y = -stomp_speed
 	else:
 		$"Ground Check Raycast".enabled = true
 		$"Ground Check Raycast".force_raycast_update()
 		var collider = $"Ground Check Raycast".get_collider()
 		if collider and collider is Ground:
-			collider.overwrite_tile_color(global_position, true)
+			if state == State.DEFAULT:
+				collider.overwrite_tile_color(global_position, true)
+			elif state == State.STOMPING:
+				collider.notify_circle_marking(global_position)
+				print("stomp ended")
 		$"Ground Check Raycast".enabled = false
+		state = State.DEFAULT
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		perform_jump(jump_velocity)
-
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor():
+			perform_jump(jump_velocity)
+		elif velocity.y <= stomp_rise_cap:
+			perform_stomp()
+	
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if state == State.DEFAULT and direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
@@ -89,6 +110,11 @@ func perform_jump(jump_vel: float, mute_player_jump_sound: bool = false):
 	shake_player_mesh(4.0)
 	if not mute_player_jump_sound:
 		AudioManager.play_jump_sound()
+
+func perform_stomp():
+	print("stomp ")
+	state = State.STOMPING
+	pass
 
 func hurt_player(damage: int = 1):
 	AudioManager.play_damaged_sound()
