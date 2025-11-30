@@ -27,13 +27,6 @@ var current_health: int:
 	get():
 		return current_health
 
-var coin_count: int = 0:
-	set(value):
-		coin_count = value
-		game_ui.update_coin_count_label(value)
-	get():
-		return coin_count
-
 var touching_shockwave: bool = false:
 	set(value):
 		if value and not touching_shockwave:
