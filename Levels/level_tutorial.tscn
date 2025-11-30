@@ -86,9 +86,9 @@ font_size = 128
 outline_size = 64
 
 [node name="Label3D4" type="Label3D" parent="Tutorial Texts" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.701748, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.701748, 0, 0)
 billboard = 1
-text = "Walk over every black floor tile
-to complete the level"
+text = "Walk over every black floor tile to
+receive a coin and finish the level"
 font_size = 128
 outline_size = 64

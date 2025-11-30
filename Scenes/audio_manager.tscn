@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://xf0jmhlvbnap"]
+[gd_scene load_steps=27 format=3 uid="uid://xf0jmhlvbnap"]
 
 [ext_resource type="Script" uid="uid://dxf2y48xbk06" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
 [ext_resource type="AudioStream" uid="uid://c10walrle8ke2" path="res://Assets/Sounds/Steps/Shoe Step Wood Hard A.wav" id="2_fasow"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://u1eyfnauabqc" path="res://Assets/Sounds/Walking Shirt B.wav" id="21_ype7x"]
 [ext_resource type="AudioStream" uid="uid://i6mx1ymknxpq" path="res://Assets/Sounds/Hit Tear B.wav" id="22_7oln7"]
 [ext_resource type="AudioStream" uid="uid://b4leakddsjvg5" path="res://Assets/Sounds/Equipment Small Handle Fast D.wav" id="23_7oln7"]
+[ext_resource type="AudioStream" uid="uid://dmcm28y44rehr" path="res://Assets/Sounds/Lamp Switch Off A.wav" id="25_uj3df"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dv115"]
 random_pitch = 1.93
@@ -98,5 +99,13 @@ volume_db = -5.2
 [node name="Broken Glass Sound Player" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_3rm37")
 volume_db = -7.8
+
+[node name="Timer Tick A Sound Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_uj3df")
+volume_db = 2.0
+
+[node name="Timer Tick B Sound Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_uj3df")
+volume_db = 2.0
 
 [connection signal="timeout" from="World Tick" to="." method="_on_world_tick_timeout"]

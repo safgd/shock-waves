@@ -68,5 +68,11 @@ func play_ingame_button_click_sound():
 func play_button_click_sound():
 	$"Button Click Sound".play()
 
+func play_timer_tick_sound(a_variant: bool):
+	if a_variant:
+		$"Timer Tick A Sound Player".play()
+	else:
+		$"Timer Tick B Sound Player".play()
+
 func _on_world_tick_timeout() -> void:
 	audio_tick.emit()

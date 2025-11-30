@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://chnpph1o635wx" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://cha7i02mpbwcm" path="res://Assets/Particles/spark_particles.tscn" id="2_cvnsp"]
+[ext_resource type="Material" uid="uid://ciqb1dxxhg5ln" path="res://Assets/Materials/red.tres" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://bbrqxjgoq3m2f" path="res://Assets/Particles/smoke_particles.tscn" id="3_6t5aa"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t5aa"]
-albedo_color = Color(1, 0.45431453, 0.6136158, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_f60y1"]
 
@@ -22,7 +20,7 @@ material = SubResource("StandardMaterial3D_v0iea")
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_v0iea")
 jump_velocity = 5.5
-hurt_material = SubResource("StandardMaterial3D_6t5aa")
+hurt_material = ExtResource("2_vgqql")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_f60y1")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba1lhlowv02v7"]
+[gd_scene load_steps=8 format=3 uid="uid://ba1lhlowv02v7"]
 
 [ext_resource type="Script" uid="uid://bgps5jalpgvtw" path="res://Scripts/shock_wave_spawner.gd" id="1_5a1a6"]
 [ext_resource type="PackedScene" uid="uid://cejxqbneuohe0" path="res://Scenes/Game Objects/shock_wave.tscn" id="2_u1nf7"]
+[ext_resource type="Material" uid="uid://ciqb1dxxhg5ln" path="res://Assets/Materials/red.tres" id="3_5qhuo"]
 [ext_resource type="PackedScene" uid="uid://dpsppyk2nx6a6" path="res://Scenes/Game Objects/ground_check_raycast.tscn" id="3_mt0yn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6h6s"]
@@ -17,6 +18,7 @@ height = 1.0
 [node name="Shock Wave Spawner" type="StaticBody3D"]
 script = ExtResource("1_5a1a6")
 shock_wave_scene = ExtResource("2_u1nf7")
+alternative_material = ExtResource("3_5qhuo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

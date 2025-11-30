@@ -7,6 +7,8 @@ extends StaticBody3D
 # should be changed to preload perhaps
 @export var shock_wave_scene: PackedScene
 
+@export var alternative_material: StandardMaterial3D
+
 func _ready() -> void:
 	$"Repating Shock Wave Timer".wait_time = interval
 	$"Initial Wait Timer".wait_time = initial_wait_time
@@ -33,5 +35,7 @@ func _on_trigger(active: bool):
 	if active:
 		$"Repating Shock Wave Timer".stop()
 		$"Initial Wait Timer".stop()
+		$MeshInstance3D.set_surface_override_material(0, alternative_material)
 	else:
 		$"Repating Shock Wave Timer".start()
+		$MeshInstance3D.set_surface_override_material(0, null)
