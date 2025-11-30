@@ -17,6 +17,7 @@ func _ready() -> void:
 	if type == Type.COIN:
 		if GameStats.was_coin_collected(level_scene_path, name):
 			$MeshInstance3D.set_surface_override_material(0, alternative_material)
+			$"Coin Mesh".set_surface_override_material(0, alternative_material)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
