@@ -9,9 +9,9 @@
 [node name="Level 5" instance=ExtResource("1_a6k8o")]
 
 [node name="Ground" parent="Grounds" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 width = 3
-length = 11
+length = 8
 
 [node name="Ground4" parent="Grounds" index="1" instance=ExtResource("2_pses1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12)
@@ -33,7 +33,7 @@ length = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 12)
 
 [node name="Shock Wave Spawner" parent="Schock Wave Spawners" index="0" instance=ExtResource("3_321yd")]
-transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, 0, -4.371139e-08, -1, 0.70710677, 0.70710677, -3.090862e-08, -2, 3, 7)
+transform = Transform3D(0.597625, -0.80177546, 3.504671e-08, 0, -4.3711378e-08, -0.99999964, 0.8017755, 0.597625, -2.6123015e-08, -2.1188726, 0.74135375, 6.511711)
 initial_wait_time = 0.01
 
 [node name="Shock Wave Spawner2" parent="Schock Wave Spawners" index="1" instance=ExtResource("3_321yd")]

@@ -23,6 +23,13 @@ SceneLoader="*res://Scenes/scene_loader.tscn"
 GameStats="*res://Scenes/game_stats.tscn"
 ParticleManager="*res://Scenes/particle_manager.tscn"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 ui_left={

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://5r1r0faegm4w"]
+[gd_scene load_steps=4 format=3 uid="uid://5r1r0faegm4w"]
 
 [ext_resource type="Script" uid="uid://bn4watmiqqr6i" path="res://Scripts/Menus/home_menu.gd" id="1_f5s61"]
 [ext_resource type="LabelSettings" uid="uid://bhvd5ckquyxa5" path="res://Assets/Label Settings/titels.tres" id="2_r8s6s"]
+[ext_resource type="Theme" uid="uid://0ygj1q8ykxat" path="res://Assets/Label Settings/button_text_theme.tres" id="3_q7aom"]
 
 [node name="Home Menu" type="CanvasLayer"]
 script = ExtResource("1_f5s61")
@@ -31,12 +32,14 @@ horizontal_alignment = 1
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credits Button")
 focus_neighbor_bottom = NodePath("../Credits Button")
+theme = ExtResource("3_q7aom")
 text = "Start Game"
 
 [node name="Credits Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Start Button")
 focus_neighbor_bottom = NodePath("../Start Button")
+theme = ExtResource("3_q7aom")
 text = "Credits"
 
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]

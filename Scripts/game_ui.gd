@@ -2,8 +2,6 @@ class_name Game_UI
 extends CanvasLayer
 
 @onready var fps_label: Label = $"VBoxContainer/FPS Label"
-@onready var health_label: Label = $"VBoxContainer/Health Label"
-@onready var total_coins_label: Label = $"VBoxContainer/Total Coins Label"
 @export var is_outside_levels: bool = false
 
 func _ready() -> void:
@@ -11,7 +9,7 @@ func _ready() -> void:
 	# This property has a setter function. Calling it updates an ui-label with the according value
 	GameStats.coins = GameStats.coins
 	if is_outside_levels:
-		health_label.hide()
+		$"VBoxContainer/Health HBox".hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -19,10 +17,10 @@ func _process(_delta: float) -> void:
 	
 
 func update_health_label(health_points: int):
-	health_label.text = str(health_points) + " HP"
+	$"VBoxContainer/Health HBox/Health Label".text = str(health_points) + " x"
 
 func update_total_coin_count_label(coin_count: float):
-	total_coins_label.text = str(coin_count) + " Coins"
+	$"VBoxContainer/Coins HBox/Total Coins Label".text = str(coin_count) + " x"
 	
 func _input(event):
 	return
