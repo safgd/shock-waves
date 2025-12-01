@@ -1,5 +1,6 @@
-![Alt text](/images/git_preview.png "Preview Screenshot")
+A game made with the Godot game engine.
 
+![Alt text](/images/git_preview.png "Preview Screenshot")
 
 
 Licenses:
