@@ -11,13 +11,16 @@ signal damaged
 @export var orientation_speed: float = 20.0
 @onready var invulnerability_timer: Timer = $"Invulnerability Timer"
 @export var stomp_speed: float = 12.0
-@export var stomp_rise_cap: float = 0.2  
 
 @export_category("Game Juice")
 @export var shake_ammount: float = 0.2
 @export var shake_duration: float = 0.2
 @export var hurt_material: StandardMaterial3D
-#var default_material: StandardMaterial3D
+@export var squash_duration: float = 0.05
+## 0.5 equals dividing the player height by 2
+@export var squash_ammount: float = 0.6
+@export var expand_ammount: float = 1.2
+var squash_tween: Tween
 
 @export_category("Setup")
 @export var game_ui: Game_UI
@@ -26,7 +29,8 @@ var original_scale: Vector3
 
 enum State{
 	DEFAULT,
-	STOMPING
+	STOMPING,
+	STOMP_ENDLAG
 }
 
 var state: State = State.DEFAULT
@@ -74,7 +78,10 @@ func _physics_process(delta: float) -> void:
 				collider.notify_circle_marking(global_position)
 		$"Ground Check Raycast".enabled = false
 		if state == State.STOMPING:
-			state = State.DEFAULT
+			#state = State.DEFAULT
+			state = State.STOMP_ENDLAG
+			squash_player_size()
+			$"Stomp Endlag Timer".start()
 			$"Spark Particles".global_position = Vector3(global_position.x, global_position.y-0.5, global_position.z)
 			$"Spark Particles".emitting = true
 			AudioManager.stop_stomp_sound()
@@ -84,7 +91,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			perform_jump(jump_velocity)
-		elif velocity.y <= stomp_rise_cap:
+		else:
 			perform_stomp()
 	
 	
@@ -125,6 +132,7 @@ func perform_jump(jump_vel: float, mute_player_jump_sound: bool = false):
 func perform_stomp():
 	state = State.STOMPING
 	AudioManager.play_stomp_sound()
+	thin_out_player_size()
 	pass
 
 func hurt_player(damage: int = 1):
@@ -171,3 +179,20 @@ func add_hat(hat: Shop_Item):
 
 func _on_invulnerability_timer_timeout() -> void:
 	$MeshInstance3D.set_surface_override_material(0, null)
+
+func thin_out_player_size():
+	if squash_tween:
+		squash_tween.stop()
+	squash_tween = get_tree().create_tween()
+	squash_tween.tween_property($MeshInstance3D, "scale", Vector3(squash_ammount, expand_ammount, squash_ammount), squash_duration)
+	
+func squash_player_size():
+	squash_tween.stop()
+	squash_tween = get_tree().create_tween()
+	squash_tween.tween_property($MeshInstance3D, "scale", Vector3(expand_ammount, squash_ammount, expand_ammount), squash_duration)
+
+func _on_stomp_endlag_timer_timeout() -> void:
+	state = State.DEFAULT
+	squash_tween.stop()
+	var reset_size_tween: Tween = get_tree().create_tween()
+	reset_size_tween.tween_property($MeshInstance3D, "scale", Vector3(1.0, 1.0, 1.0), squash_duration)

@@ -11,13 +11,15 @@ extends StaticBody3D
 var default_speaker_box_material: StandardMaterial3D
 signal shock_wave_spawning
 
+@export var expand_ammount: float = 1.2
+@export var expand_duration: float = 0.1
+var expand_tween: Tween
+
 func _ready() -> void:
 	$"Repating Shock Wave Timer".wait_time = interval
 	$"Initial Wait Timer".wait_time = initial_wait_time
 	default_speaker_box_material = $CollisionShape3D2/Speaker.get_surface_override_material(0)
 	$"Initial Wait Timer".start()
-	
-	
 	
 
 func _on_repating_shock_wave_timer_timeout() -> void:
@@ -30,6 +32,7 @@ func spawn_shock_wave():
 	shock_wave.ring_growth = ring_growth_speed
 	shock_wave.global_position = global_position
 	shock_wave.global_rotation = global_rotation
+	expand_size()
 
 
 func _on_initial_wait_timer_timeout() -> void:
@@ -46,3 +49,12 @@ func _on_trigger(active: bool):
 		$"Repating Shock Wave Timer".start()
 		$MeshInstance3D.set_surface_override_material(0, null)
 		$CollisionShape3D2/Speaker.set_surface_override_material(0, default_speaker_box_material)
+
+func expand_size():
+	var mesh: MeshInstance3D = $CollisionShape3D2/Speaker
+	if expand_tween:
+		expand_tween.stop()
+	expand_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT)
+	expand_tween.tween_property(mesh, "scale", Vector3(expand_ammount, expand_ammount, expand_ammount), expand_duration / 2.0)
+	expand_tween.tween_property(mesh, "scale", Vector3(1.0, 1.0, 1.0), expand_duration / 2.0)
+	print("expand")
