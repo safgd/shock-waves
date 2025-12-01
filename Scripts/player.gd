@@ -24,12 +24,14 @@ var squash_tween: Tween
 
 @export_category("Setup")
 @export var game_ui: Game_UI
+@export var lock_z_movement: bool = false
 
 @export_category("Mouth Symbols")
 @export var mouth_default: String = "__"
 @export var mouth_happy: String = "U"
 @export var mouth_surprised: String = "M"
 @export var mouth_jump: String = "O"
+
 
 var original_scale: Vector3
 
@@ -111,6 +113,12 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if lock_z_movement:
+		direction = Vector3.ZERO
+		if Input.is_action_pressed("ui_left"):
+			direction.x -= 1.0
+		if Input.is_action_pressed("ui_right"):
+			direction.x += 1.0
 	if state == State.DEFAULT and direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed

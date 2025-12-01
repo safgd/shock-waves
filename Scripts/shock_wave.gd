@@ -31,3 +31,7 @@ func change_color():
 
 func _on_timer_timeout() -> void:
 	call_deferred("queue_free")
+
+func set_stay_alive_time(time: float):
+	$Timer.wait_time = time
+	$Timer.start()

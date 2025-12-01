@@ -15,6 +15,8 @@ signal shock_wave_spawning
 @export var expand_duration: float = 0.1
 var expand_tween: Tween
 
+@export var shorten_time_alive: bool = false
+
 func _ready() -> void:
 	$"Repating Shock Wave Timer".wait_time = interval
 	$"Initial Wait Timer".wait_time = initial_wait_time
@@ -32,6 +34,8 @@ func spawn_shock_wave():
 	shock_wave.ring_growth = ring_growth_speed
 	shock_wave.global_position = global_position
 	shock_wave.global_rotation = global_rotation
+	if shorten_time_alive:
+		shock_wave.set_stay_alive_time(2.0)
 	expand_size()
 
 
