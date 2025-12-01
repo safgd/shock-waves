@@ -1,4 +1,5 @@
 A game made with the Godot game engine.
+Only code is included, no assets.
 
 ![Alt text](/images/git_preview.png "Preview Screenshot")
 
