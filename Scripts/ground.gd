@@ -43,7 +43,7 @@ enum Mode{
 var level: Level
 
 func _ready():
-	if owner == get_tree().edited_scene_root:
+	if get_tree().edited_scene_root != null && get_tree().edited_scene_root in [self, owner]:
 		return
 	
 	level = get_parent().get_parent()

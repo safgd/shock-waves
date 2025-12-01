@@ -57,4 +57,3 @@ func expand_size():
 	expand_tween = create_tween().set_ease(Tween.EaseType.EASE_IN_OUT)
 	expand_tween.tween_property(mesh, "scale", Vector3(expand_ammount, expand_ammount, expand_ammount), expand_duration / 2.0)
 	expand_tween.tween_property(mesh, "scale", Vector3(1.0, 1.0, 1.0), expand_duration / 2.0)
-	print("expand")

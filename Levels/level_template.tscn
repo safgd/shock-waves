@@ -31,8 +31,8 @@ hub_world_scene_path = "res://Levels/world_hub.tscn"
 environment = SubResource("Environment_nsw7g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.2500001, 0.39828616, -0.29515737, 0.8684759, -0.3022718, 0.8516937, 0.42807665, 0, 6.356746, 0)
-light_energy = 9.289
+transform = Transform3D(-0.8660254, -0.4330128, 0.25000003, 0.4871242, -0.617947, 0.61713165, -0.112739116, 0.65623266, 0.74608886, 0, 6.356746, 0)
+light_energy = 4.232
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]

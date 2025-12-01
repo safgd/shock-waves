@@ -45,6 +45,8 @@ func _on_body_entered(body: Node3D) -> void:
 		
 
 func _ready() -> void:
+	if get_tree().edited_scene_root != null && get_tree().edited_scene_root in [self, owner]:
+		return
 	open = GameStats.is_level_open(level_scene_path)
 	
 	$Label3D.text = level_name

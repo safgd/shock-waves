@@ -4,6 +4,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltmge"]
 transparency = 1
+disable_receive_shadows = true
 
 [node name="Shock Wave" type="Node3D"]
 script = ExtResource("1_60xfj")
