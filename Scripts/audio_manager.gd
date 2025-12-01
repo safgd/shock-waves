@@ -13,6 +13,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	music_bus_index = AudioServer.get_bus_index("Music")
 	music_default_volume = AudioServer.get_bus_volume_db(music_bus_index)
+	change_to_music(10)
+	
 
 func toggle_music():
 	music_muted = !music_muted
@@ -20,6 +22,10 @@ func toggle_music():
 		AudioServer.set_bus_volume_db(music_bus_index, -80)
 	else:
 		AudioServer.set_bus_volume_db(music_bus_index, music_default_volume)
+
+func change_to_music(index: int):
+	print("play: " + str(index))
+	$"Music Player".get_stream_playback().switch_to_clip(index)
 
 func play_jump_sound():
 	$"Jump Sound Player".play()

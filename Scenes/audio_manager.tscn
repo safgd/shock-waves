@@ -1,8 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://xf0jmhlvbnap"]
+[gd_scene load_steps=39 format=3 uid="uid://xf0jmhlvbnap"]
 
 [ext_resource type="Script" uid="uid://dxf2y48xbk06" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
 [ext_resource type="AudioStream" uid="uid://c10walrle8ke2" path="res://Assets/Sounds/Steps/Shoe Step Wood Hard A.wav" id="2_fasow"]
-[ext_resource type="AudioStream" uid="uid://bnklhh7x82kur" path="res://Assets/Sounds/Electronic Vol6 Electric Main.wav" id="2_hhwve"]
+[ext_resource type="AudioStream" uid="uid://bnklhh7x82kur" path="res://Assets/Sounds/music/Electronic Vol6 Electric Main.wav" id="2_hhwve"]
 [ext_resource type="AudioStream" uid="uid://ch3uperlh2t5" path="res://Assets/Sounds/Steps/Shoe Step Wood Hard B.wav" id="3_1bal0"]
 [ext_resource type="AudioStream" uid="uid://bc485gkw7ocik" path="res://Assets/Sounds/Whoosh Fast B.wav" id="3_qixve"]
 [ext_resource type="AudioStream" uid="uid://pjuly2owpogq" path="res://Assets/Sounds/Cyber Blade 001.wav" id="4_qixve"]
@@ -13,19 +13,67 @@
 [ext_resource type="AudioStream" uid="uid://ooicekh6yw5p" path="res://Assets/Sounds/Items/Inventory.wav" id="6_mjqhu"]
 [ext_resource type="AudioStream" uid="uid://xa4ftfr2eh74" path="res://Assets/Sounds/Steps/Shoe Step Wood Medium A.wav" id="7_tesok"]
 [ext_resource type="AudioStream" uid="uid://dfo6iiofjrqpu" path="res://Assets/Sounds/Steps/Shoe Step Wood Medium B.wav" id="8_s7ae5"]
+[ext_resource type="AudioStream" uid="uid://mq4nhykelgde" path="res://Assets/Sounds/music/Electronic Vol6 Lazer Invaders Main.wav" id="11_rd4uy"]
+[ext_resource type="AudioStream" uid="uid://beone1xdjhj0x" path="res://Assets/Sounds/music/Electronic Vol4 On A Mission Main.wav" id="11_ufe2k"]
 [ext_resource type="AudioStream" uid="uid://7ydfxcswi8dh" path="res://Assets/Sounds/Soft Button.wav" id="11_w4e61"]
+[ext_resource type="AudioStream" uid="uid://t3mx7sq5i62l" path="res://Assets/Sounds/music/Electronic Vol6 Outta Time Main.wav" id="12_yjwgl"]
+[ext_resource type="AudioStream" uid="uid://cse26n8i0hm3j" path="res://Assets/Sounds/music/Electronic Defeat main.wav" id="13_ovbke"]
 [ext_resource type="AudioStream" uid="uid://xkbpgb6xlxes" path="res://Assets/Sounds/Holy Laser B.wav" id="13_tesok"]
 [ext_resource type="AudioStream" uid="uid://dewv0d7k66q2c" path="res://Assets/Sounds/Items/Casual Glass.wav" id="14_1bal0"]
 [ext_resource type="AudioStream" uid="uid://c2snmdk3xuavp" path="res://Assets/Sounds/Items/Harmonic I.wav" id="14_dv115"]
+[ext_resource type="AudioStream" uid="uid://pi41ndspt5kg" path="res://Assets/Sounds/music/Electronic Fight main.wav" id="14_n43ks"]
+[ext_resource type="AudioStream" uid="uid://dopmd6wohag6p" path="res://Assets/Sounds/music/Electronic Grudge main.wav" id="15_lbkx3"]
+[ext_resource type="AudioStream" uid="uid://cnhwyqg2ed2bl" path="res://Assets/Sounds/music/Electronic Vol2 Digitist Main.wav" id="16_2bruv"]
 [ext_resource type="AudioStream" uid="uid://clvrxcapf8is7" path="res://Assets/Sounds/Electric Zap.wav" id="16_dv115"]
+[ext_resource type="AudioStream" uid="uid://b6l3mcuooalkc" path="res://Assets/Sounds/music/Electronic Vol3 Vantaforgiato Main.wav" id="17_44m2u"]
 [ext_resource type="AudioStream" uid="uid://difru4b4dxftk" path="res://Assets/Sounds/UI/Octavius H.wav" id="17_s7ae5"]
+[ext_resource type="AudioStream" uid="uid://csxyfivpk2cjv" path="res://Assets/Sounds/music/Electronic Vol4 Midnight Main.wav" id="18_ut656"]
+[ext_resource type="AudioStream" uid="uid://c0rd8capyhe2s" path="res://Assets/Sounds/music/Electronic Vol6 Color Swing Main.wav" id="19_dvq1c"]
 [ext_resource type="AudioStream" uid="uid://bn818ofa3o6v4" path="res://Assets/Sounds/Broken C.wav" id="19_uebr4"]
+[ext_resource type="AudioStream" uid="uid://chrek1voounx6" path="res://Assets/Sounds/music/Electronic Vol6 High Grade Main.wav" id="20_0w304"]
 [ext_resource type="AudioStream" uid="uid://u1eyfnauabqc" path="res://Assets/Sounds/Walking Shirt B.wav" id="21_ype7x"]
 [ext_resource type="AudioStream" uid="uid://i6mx1ymknxpq" path="res://Assets/Sounds/Hit Tear B.wav" id="22_7oln7"]
 [ext_resource type="AudioStream" uid="uid://b4leakddsjvg5" path="res://Assets/Sounds/Equipment Small Handle Fast D.wav" id="23_7oln7"]
 [ext_resource type="AudioStream" uid="uid://dmcm28y44rehr" path="res://Assets/Sounds/Lamp Switch Off A.wav" id="25_uj3df"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_3rm37"]
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ufe2k"]
+clip_count = 12
+clip_0/name = &"Electronic Vol 6 Electric Main"
+clip_0/stream = ExtResource("2_hhwve")
+clip_0/auto_advance = 0
+clip_1/name = &"Electronic Vol 4 On A Mission Main"
+clip_1/stream = ExtResource("11_ufe2k")
+clip_1/auto_advance = 0
+clip_2/name = &"Electronic Defeat Main"
+clip_2/stream = ExtResource("13_ovbke")
+clip_2/auto_advance = 0
+clip_3/name = &"Electronic Fight Main"
+clip_3/stream = ExtResource("14_n43ks")
+clip_3/auto_advance = 0
+clip_4/name = &"Electronic Grudge Main"
+clip_4/stream = ExtResource("15_lbkx3")
+clip_4/auto_advance = 0
+clip_5/name = &"Electronic Vol 2 Digitist Main"
+clip_5/stream = ExtResource("16_2bruv")
+clip_5/auto_advance = 0
+clip_6/name = &"Electronic Vol 3 Vantaforgiato Main"
+clip_6/stream = ExtResource("17_44m2u")
+clip_6/auto_advance = 0
+clip_7/name = &"Electronic Vol 4 Midnight Main"
+clip_7/stream = ExtResource("18_ut656")
+clip_7/auto_advance = 0
+clip_8/name = &"Electronic Vol 6 Color Swing Main"
+clip_8/stream = ExtResource("19_dvq1c")
+clip_8/auto_advance = 0
+clip_9/name = &"Electronic Vol 6 High Grade Main"
+clip_9/stream = ExtResource("20_0w304")
+clip_9/auto_advance = 0
+clip_10/name = &"Electronic Vol 6 Lazer Invaders Main"
+clip_10/stream = ExtResource("11_rd4uy")
+clip_10/auto_advance = 0
+clip_11/name = &"Electronic Vol 6 Outta Time Main"
+clip_11/stream = ExtResource("12_yjwgl")
+clip_11/auto_advance = 0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dv115"]
 random_pitch = 1.93
@@ -44,14 +92,10 @@ level_music_tracks = Array[AudioStream]([null, null, null, null, null, null, nul
 step_audio_streams = Array[AudioStream]([ExtResource("2_fasow"), ExtResource("3_1bal0"), ExtResource("4_vhwx7"), ExtResource("5_bkjj7"), ExtResource("6_dv115"), ExtResource("7_tesok"), ExtResource("8_s7ae5")])
 
 [node name="Music Player" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_hhwve")
+stream = SubResource("AudioStreamInteractive_ufe2k")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"
-
-[node name="Level Music Player" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPolyphonic_3rm37")
-volume_db = -15.0
 
 [node name="Jump Sound Player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qixve")

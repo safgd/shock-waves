@@ -62,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.4642303, 0)
 width = 1
 length = 1
 
-[node name="Camera3D" parent="Player" index="9"]
+[node name="Camera3D" parent="Player" index="10"]
 transform = Transform3D(1, 0, 0, 0, 0.94305444, 0.33263847, 0, -0.33263847, 0.94305444, 0, 3.4655924, 5.2634783)
 
 [node name="Shock Wave Spawner" parent="Schock Wave Spawners" index="0" instance=ExtResource("3_0musb")]
@@ -76,12 +76,12 @@ initial_wait_time = 4.1
 ring_growth_speed = 1.5
 
 [node name="Shock Wave Spawner3" parent="Schock Wave Spawners" index="2" instance=ExtResource("3_0musb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.4704535, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2.825034, 0)
 initial_wait_time = 0.1
 ring_growth_speed = 1.5
 
 [node name="Shock Wave Spawner4" parent="Schock Wave Spawners" index="3" instance=ExtResource("3_0musb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.4704535, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.825034, 0)
 initial_wait_time = 4.1
 ring_growth_speed = 1.5
 

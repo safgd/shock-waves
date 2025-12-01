@@ -2,6 +2,8 @@
 class_name Level_Entry
 extends Area3D
 
+@export var music_index: int = 0
+
 @export var coin_cost: int = 1:
 	set(value):
 		coin_cost = value
@@ -35,12 +37,16 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		if open:
 		#get_tree().call_deferred("change_scene_to_file", level_scene_path)
+			print("level entry change music to: "+str(music_index))
+			AudioManager.change_to_music(music_index)
 			SceneLoader.change_to_scene_async(get_parent().get_parent(), level_scene_path)
 		else:
 			if GameStats.coins >= coin_cost:
 				GameStats.pay_with_coins(coin_cost)
 				GameStats.unlock_level(level_scene_path)
 				open = true
+				print("level entry change music to: "+str(music_index))
+				AudioManager.change_to_music(music_index)
 				SceneLoader.change_to_scene_async(get_parent().get_parent(), level_scene_path)
 		
 
