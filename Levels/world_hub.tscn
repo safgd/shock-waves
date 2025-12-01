@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://34ghhubsewig"]
+[gd_scene load_steps=20 format=3 uid="uid://34ghhubsewig"]
 
 [ext_resource type="Script" uid="uid://bd0i14517m6p7" path="res://Scripts/world_hub.gd" id="1_27uoq"]
 [ext_resource type="PackedScene" uid="uid://cm2aqjkuntn0h" path="res://Scenes/game_ui.tscn" id="2_5chmu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dqg2n6r6j18o5" path="res://Assets/Sprites/bouncer_pink.png" id="7_27uoq"]
 [ext_resource type="Texture2D" uid="uid://ddlbeg084djsi" path="res://Assets/Sprites/bouncer_red.png" id="8_wx043"]
 [ext_resource type="Texture2D" uid="uid://c18aqrxb8g4a7" path="res://Assets/Sprites/bouncer_yellow.png" id="9_drxpg"]
+[ext_resource type="Texture2D" uid="uid://d4jv0m10lnnbr" path="res://Assets/Sprites/bouncer_cyan.png" id="13_uerhw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_drxpg"]
 panorama = ExtResource("2_uerhw")
@@ -85,12 +86,15 @@ open = true
 level_scene_path = "res://Levels/level_tutorial.tscn"
 level_name = "Tutorial
 Club 1"
+light_color = Color(1.7808378e-06, 0.571423, 0.56434655, 1)
 
 [node name="Level Entry1" parent="Level Entries" instance=ExtResource("5_5chmu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0, 0)
 music_index = 1
 level_scene_path = "res://Levels/level_1.tscn"
 level_name = "Level 1"
+bouncer_image = ExtResource("9_drxpg")
+light_color = Color(0.5341173, 0.4735111, 0, 1)
 
 [node name="Level Entry2" parent="Level Entries" instance=ExtResource("5_5chmu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 0)
@@ -153,8 +157,8 @@ music_index = 8
 coin_cost = 2
 level_scene_path = "res://Levels/level_8.tscn"
 level_name = "Level 8"
-bouncer_image = ExtResource("6_7fna7")
-light_color = Color(0, 0.48475963, 0.20632803, 1)
+bouncer_image = ExtResource("8_wx043")
+light_color = Color(0.746805, 0, 0.27892655, 1)
 
 [node name="Level Entry9" parent="Level Entries" instance=ExtResource("5_5chmu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 45, 0, 0)
@@ -162,5 +166,14 @@ music_index = 9
 coin_cost = 2
 level_scene_path = "res://Levels/level_9.tscn"
 level_name = "Level 9"
-bouncer_image = ExtResource("6_7fna7")
-light_color = Color(0, 0.48475963, 0.20632803, 1)
+bouncer_image = ExtResource("9_drxpg")
+light_color = Color(0.5443605, 0.5681005, 0, 1)
+
+[node name="Level Entry10" parent="Level Entries" instance=ExtResource("5_5chmu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 50, 0, 0)
+music_index = 10
+coin_cost = 4
+level_scene_path = "res://Levels/level_10.tscn"
+level_name = "Level 10"
+bouncer_image = ExtResource("13_uerhw")
+light_color = Color(0.15216279, 0.4099264, 0.67412347, 1)

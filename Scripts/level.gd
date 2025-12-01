@@ -22,5 +22,5 @@ func win_condition_fulfilled():
 		AudioManager.play_win_sound()
 		if not GameStats.was_coin_collected(scene_file_path, scene_file_path):
 			GameStats.add_coin(scene_file_path, scene_file_path, 1.0)
-		AudioManager.change_to_music(10)
+		AudioManager.change_to_music(11)
 		SceneLoader.change_to_scene_async(self, hub_world_scene_path)

@@ -68,11 +68,11 @@ clip_8/auto_advance = 0
 clip_9/name = &"Electronic Vol 6 High Grade Main"
 clip_9/stream = ExtResource("20_0w304")
 clip_9/auto_advance = 0
-clip_10/name = &"Electronic Vol 6 Lazer Invaders Main"
-clip_10/stream = ExtResource("11_rd4uy")
+clip_10/name = &"Electronic Vol 6 Outta Time Main"
+clip_10/stream = ExtResource("12_yjwgl")
 clip_10/auto_advance = 0
-clip_11/name = &"Electronic Vol 6 Outta Time Main"
-clip_11/stream = ExtResource("12_yjwgl")
+clip_11/name = &"Electronic Vol 6 Lazer Invaders Main"
+clip_11/stream = ExtResource("11_rd4uy")
 clip_11/auto_advance = 0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dv115"]
