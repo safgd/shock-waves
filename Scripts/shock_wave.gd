@@ -14,7 +14,6 @@ func _ready() -> void:
 	if no_time_out:
 		$CSGTorus.use_collision = false
 		$Timer.stop()
-		hide()
 
 func _physics_process(delta: float) -> void:
 	if not no_time_out:

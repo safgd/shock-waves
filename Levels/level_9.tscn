@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw3f4gioqij7c"]
+[gd_scene load_steps=6 format=3 uid="uid://bw3f4gioqij7c"]
 
 [ext_resource type="PackedScene" uid="uid://colbenhotb1vv" path="res://Levels/level_template.tscn" id="1_v10ax"]
 [ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_qrcer"]
 [ext_resource type="PackedScene" uid="uid://ym0cute1516x" path="res://Scenes/Game Objects/breakable_floor.tscn" id="3_ah48u"]
 [ext_resource type="PackedScene" uid="uid://ba1lhlowv02v7" path="res://Scenes/Game Objects/shock_wave_spawner.tscn" id="3_qrcer"]
+[ext_resource type="PackedScene" uid="uid://cheeey5c78fnh" path="res://Scenes/Collectables/health_collectable.tscn" id="4_ah48u"]
 
 [node name="Level 9" instance=ExtResource("1_v10ax")]
 
@@ -167,10 +168,13 @@ ring_growth_speed = 4.0
 shorten_time_alive = true
 
 [node name="Shock Wave Spawner3" parent="Schock Wave Spawners" index="2" instance=ExtResource("3_qrcer")]
-transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, -6, 1, 0)
+transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, -5.5, 1, 0)
 interval = 2.0
 ring_growth_speed = 8.0
 shorten_time_alive = true
+
+[node name="Health Collectable" parent="Collectables" index="0" instance=ExtResource("4_ah48u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)
 
 [node name="Breakable Floor" parent="." index="9" instance=ExtResource("3_ah48u")]
 transform = Transform3D(2, 0, 0, 0, 4, 0, 0, 0, 2, 2.5, 9, -0.5)
@@ -180,6 +184,9 @@ transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -0.5, 4, -0.5)
 
 [node name="Breakable Floor3" parent="." index="11" instance=ExtResource("3_ah48u")]
 transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 2.5, -1, -0.5)
+
+[node name="Breakable Floor4" parent="." index="12" instance=ExtResource("3_ah48u")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -0.5, -6, -0.5)
 
 [node name="Speaker" parent="Background" index="0"]
 transform = Transform3D(3.4032445, 0, -2.1018867, 0, 4, 0, 2.1018867, 0, 3.4032445, -15.186722, 0, -13.441061)

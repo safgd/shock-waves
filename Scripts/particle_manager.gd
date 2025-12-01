@@ -1,5 +1,11 @@
 extends Node
 
+# to precompile shaders
+func _ready():
+	$"Spark Particles".emitting = true
+	$"Red Spark Particles".emitting = true
+	$"Glass Shard Particles".emitting = true
+
 func spawn_spark_particles(pos: Vector3):
 	$"Spark Particles".global_position = pos
 	$"Spark Particles".emitting = true
