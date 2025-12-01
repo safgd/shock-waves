@@ -9,7 +9,7 @@
 ![Alt text](/images/git_preview.png "Preview Screenshot")
 
 
-### Licenses:
+## Licenses:
 
 ### Game: Copyright 2025 Amir Safaei
 All Rights Reserved.
