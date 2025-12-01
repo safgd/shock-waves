@@ -11,7 +11,7 @@
 width = 9
 length = 9
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)
 
 [node name="Shock Wave Spawner" parent="Schock Wave Spawners" index="0" instance=ExtResource("2_syshm")]
@@ -57,4 +57,4 @@ transform = Transform3D(0.7853496, -0.77577317, -3.8446589, 0.15526128, 3.924051
 transform = Transform3D(-0.4243583, 1.4466935, -3.7049963, 0.1646233, 3.7292194, 1.4372966, 3.974018, 0, -0.4551712, 8.348547, -3.95014, -43.805614)
 
 [node name="Double Music Note3" parent="Background" index="8"]
-transform = Transform3D(-1.7361461, 0, -3.6035812, 0, 4, 0, 3.6035812, 0, -1.7361461, 10.482279, -13.031665, -18.344198)
+transform = Transform3D(-3.7247834, 0, -1.4580771, 0, 4, 0, 1.4580771, 0, -3.7247834, 19.395443, -18.15791, -24.138668)

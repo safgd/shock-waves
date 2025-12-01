@@ -14,7 +14,7 @@ size = Vector2(1, 1)
 
 [node name="Ground" type="StaticBody3D"]
 script = ExtResource("1_02qk3")
-random_colors = Array[Color]([Color(3.657937e-06, 0.8842119, 0.5454691, 1), Color(0.9999835, 0.13564709, 0.44308364, 1), Color(0.772041, 0.7265799, 0, 1), Color(0, 0.6216101, 0.94955117, 1), Color(0.64869463, 0.38579282, 0.99999064, 1)])
+random_colors = Array[Color]([Color(1.5883148e-05, 0.7385639, 0.45386875, 1), Color(0.9999835, 0.13564709, 0.44308364, 1), Color(0.772041, 0.7265799, 0, 1), Color(0, 0.6216101, 0.94955117, 1), Color(0.64869463, 0.38579282, 0.99999064, 1)])
 mesh = ExtResource("3_s6h8e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

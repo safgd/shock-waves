@@ -52,11 +52,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_le76m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76och"]
-albedo_color = Color(1, 0.2613049, 0.38377416, 1)
+albedo_color = Color(0.8105498, 0, 0.24842846, 1)
+metallic = 0.34
+roughness = 0.77
+emission = Color(0.14406255, 0.14406255, 0.14406255, 1)
 
 [node name="Health Collectable" instance=ExtResource("1_sroon")]
 type = 1
-ammount = 1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
 visible = false

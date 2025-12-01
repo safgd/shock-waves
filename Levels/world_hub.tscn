@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://34ghhubsewig"]
+[gd_scene load_steps=20 format=3 uid="uid://34ghhubsewig"]
 
 [ext_resource type="Script" uid="uid://bd0i14517m6p7" path="res://Scripts/world_hub.gd" id="1_27uoq"]
 [ext_resource type="Texture2D" uid="uid://bf1crmwxkea0i" path="res://icon.svg" id="1_yyfnp"]
 [ext_resource type="PackedScene" uid="uid://cm2aqjkuntn0h" path="res://Scenes/game_ui.tscn" id="2_5chmu"]
+[ext_resource type="Texture2D" uid="uid://clgesu8iqa70j" path="res://Assets/Skyboxes/nightsky.exr" id="2_uerhw"]
 [ext_resource type="PackedScene" uid="uid://csl17lkggtans" path="res://Scenes/Menus/pause_menu.tscn" id="3_f3jub"]
 [ext_resource type="PackedScene" uid="uid://dluav450y5end" path="res://Scenes/player.tscn" id="4_uril1"]
 [ext_resource type="PackedScene" uid="uid://bqn7v7j2egbbp" path="res://Scenes/level_entry.tscn" id="5_5chmu"]
@@ -13,12 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://ct0wnptbh06xq" path="res://Scenes/outfit_shop.tscn" id="11_wx043"]
 [ext_resource type="PackedScene" uid="uid://cigovqa4057km" path="res://Scenes/Shop Items/hat_shop_item.tscn" id="12_drxpg"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lj037"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_drxpg"]
+panorama = ExtResource("2_uerhw")
 
 [sub_resource type="Sky" id="Sky_7fna7"]
-sky_material = SubResource("ProceduralSkyMaterial_lj037")
+sky_material = SubResource("PanoramaSkyMaterial_drxpg")
 
 [sub_resource type="Environment" id="Environment_27uoq"]
 background_mode = 2
@@ -44,8 +44,8 @@ script = ExtResource("1_27uoq")
 environment = SubResource("Environment_27uoq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_energy = 0.014
+transform = Transform3D(-0.87802213, -0.35996932, 0.31543505, 0.47219688, -0.5438865, 0.6936985, -0.078149326, 0.75803, 0.6475207, 0, 2.5516148, 6.878437)
+light_energy = 0.346
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

@@ -72,6 +72,7 @@ pointing/emulate_touch_from_mouse=true
 [layer_names]
 
 3d_render/layer_4="Layer 4"
+3d_render/layer_6="Disco Ball No Light"
 3d_physics/layer_4="Shockwave"
 3d_physics/layer_5="Shockwave Detector"
 
