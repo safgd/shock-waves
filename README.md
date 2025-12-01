@@ -2,7 +2,7 @@
 
 ## A game made with the Godot game engine.
 
-## https://fmga.itch.io/shock-raves
+## https://fmga.itch.io/sound-raves
 
 ## Only code is included, no assets.
 
