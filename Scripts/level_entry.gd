@@ -59,6 +59,7 @@ func _ready() -> void:
 	if open:
 		$Sprite3D.position = $"Bouncer 2nd Pos".position
 		$Sprite3D/Sprite3D.hide()
+		$Label3D.position.y -= 2.0
 	else:
 		$Sprite3D.position = $"Bouncer Door Pos".position
 

@@ -17,3 +17,6 @@ All Rights Reserved.
 
 ### Godot Engine and Logo / Icon:
 godotengine.org/license
+
+### Sounds and Music (not included in the git repo)
+Made by Ovani Sounds
