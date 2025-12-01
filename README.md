@@ -2,18 +2,18 @@
 
 ## A game made with the Godot game engine.
 
-## https://fmga.itch.io/shock-raves
+## https://fmga.itch.io/sound-raves
 
 ## Only code is included, no assets.
 
 ![Alt text](/images/git_preview.png "Preview Screenshot")
 
 
-### Licenses:
+## Licenses:
 
 ### Game: Copyright 2025 Amir Safaei
-### All Rights Reserved.
+All Rights Reserved.
 
 
 ### Godot Engine and Logo / Icon:
-### godotengine.org/license
+godotengine.org/license
