@@ -71,11 +71,17 @@ func _physics_process(delta: float) -> void:
 		$"Ground Check Raycast".enabled = true
 		$"Ground Check Raycast".force_raycast_update()
 		var collider = $"Ground Check Raycast".get_collider()
-		if collider and collider is Ground:
-			if state == State.DEFAULT:
-				collider.overwrite_tile_color(global_position, true)
-			elif state == State.STOMPING:
-				collider.notify_circle_marking(global_position)
+		if collider:
+			if collider is Ground:
+				if state == State.DEFAULT:
+					collider.overwrite_tile_color(global_position, true)
+				elif state == State.STOMPING:
+					collider.notify_circle_marking(global_position)
+			#elif collider is Jump_Pad:
+				#if state == State.DEFAULT:
+					#pass
+				#elif state == State.STOMPING:
+					#pass
 		$"Ground Check Raycast".enabled = false
 		if state == State.STOMPING:
 			#state = State.DEFAULT
@@ -192,6 +198,7 @@ func squash_player_size():
 	squash_tween.tween_property($MeshInstance3D, "scale", Vector3(expand_ammount, squash_ammount, expand_ammount), squash_duration)
 
 func _on_stomp_endlag_timer_timeout() -> void:
+	$"Stomp Endlag Timer".stop()
 	state = State.DEFAULT
 	squash_tween.stop()
 	var reset_size_tween: Tween = get_tree().create_tween()

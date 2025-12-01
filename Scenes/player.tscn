@@ -20,7 +20,6 @@ material = SubResource("StandardMaterial3D_v0iea")
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_v0iea")
 jump_velocity = 5.5
-stomp_rise_cap = 10.0
 hurt_material = ExtResource("2_vgqql")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

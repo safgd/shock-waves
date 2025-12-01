@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -4)
 initial_wait_time = 6.0
 
 [node name="Half Coin Collectable" parent="Collectables" index="0" instance=ExtResource("4_hvgxt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5173764, 0)
 
 [node name="Half Coin Collectable2" parent="Collectables" index="1" instance=ExtResource("4_hvgxt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -4)
