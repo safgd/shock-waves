@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://d05w714uwjcob"]
+[gd_scene load_steps=2 format=3 uid="uid://d05w714uwjcob"]
+
+[ext_resource type="Script" uid="uid://bcq7cj6vamth2" path="res://Scripts/rotater.gd" id="1_r5wrt"]
 
 [node name="Rotater" type="Node"]
+script = ExtResource("1_r5wrt")

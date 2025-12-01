@@ -52,3 +52,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="Jump Pad2" parent="Jump Pads" index="1" instance=ExtResource("3_u0s3x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -7)
+
+[node name="Speaker" parent="Background" index="0"]
+transform = Transform3D(1.0532633, -7.683411e-07, -29.981503, 29.963148, 1.0496012, 1.0526184, 1.0489541, -29.981632, 0.036850985, -3.68534, -62.76661, -9.232666)
+
+[node name="Speaker2" parent="Background" index="1"]
+transform = Transform3D(-0.6334797, 0, -9.979915, 0, 10, 0, 9.979915, 0, -0.6334797, -0.1422596, 0, -57.765358)
+
+[node name="Disco Sphere" parent="Background" index="2"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -35.46035, 6.2501564, -15.48896)
+
+[node name="Music Note" parent="Background" index="3"]
+transform = Transform3D(3.523133, 0, -1.8940781, 0, 4, 0, 1.8940781, 0, 3.523133, -31.644474, -6.338047, 13.40029)
+
+[node name="Music Note2" parent="Background" index="4"]
+transform = Transform3D(-2.5216737, 0, -3.1050222, 0, 4, 0, 3.1050222, 0, -2.5216737, 27.117683, -5.7238016, -14.152006)
+
+[node name="Music Note3" parent="Background" index="5"]
+transform = Transform3D(-1.0952324, 0, -3.8471375, 0, 4, 0, 3.8471375, 0, -1.0952324, 23.717094, -8.824816, -48.3164)
+
+[node name="Double Music Note" parent="Background" index="6"]
+transform = Transform3D(2.4898825, 1.1222649, -2.9225001, -0.7278096, 3.8393388, 0.8542667, 3.0447953, 0, 2.5940742, -29.546507, -8.82836, -45.673958)
+
+[node name="Double Music Note2" parent="Background" index="7"]
+transform = Transform3D(-1.6796039, 1.0939058, -3.4615467, -0.010559248, 3.8125942, 1.2099661, 3.6302648, 0.51720375, -1.598024, 10.5055275, -9.869774, 14.562578)
+
+[node name="Double Music Note3" parent="Background" index="8"]
+transform = Transform3D(3.0858324, 0, -2.5451207, 0, 4, 0, 2.5451207, 0, 3.0858324, -18.55359, -10.231457, 8.165089)

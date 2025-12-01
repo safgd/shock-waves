@@ -9,7 +9,7 @@
 [node name="Player" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 6)
 
-[node name="Camera3D" parent="Player" index="7"]
+[node name="Camera3D" parent="Player" index="9"]
 transform = Transform3D(1, 0, 0, 0, 0.62025833, 0.78439766, 0, -0.78439766, 0.62025833, 0, 5.3237095, 3.5355778)
 
 [node name="Shock Wave Spawner" parent="Schock Wave Spawners" index="0" instance=ExtResource("2_ej5lj")]
@@ -40,3 +40,27 @@ initial_wait_time = 7.0
 
 [node name="Coin Collectable" parent="Collectables" index="0" instance=ExtResource("3_ej5lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -6)
+
+[node name="Speaker" parent="Background" index="0"]
+transform = Transform3D(1.8172253, 3.4436805, -0.91583735, 1.9589782, -0.10670309, 3.4858315, 2.9765913, -2.0321617, -1.7349997, -18.583494, 0, -7.659273)
+
+[node name="Speaker2" parent="Background" index="1"]
+transform = Transform3D(-8.168808, 2.1417274, -5.3557043, 1.7910972, 9.767957, 1.1742946, 5.4829316, 0, -8.362862, 16.457481, -12.45586, -37.134182)
+
+[node name="Music Note" parent="Background" index="3"]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -8.853269, -18.095184, -14.152006)
+
+[node name="Music Note2" parent="Background" index="4"]
+transform = Transform3D(2.657062, 0, -2.989987, 0, 4, 0, 2.989987, 0, 2.657062, -20.421402, -7.812661, 4.6316814)
+
+[node name="Music Note3" parent="Background" index="5"]
+transform = Transform3D(0.034311704, -0.73511916, -3.93172, 0.0064150626, 3.9318697, -0.73509115, 3.9998477, 0, 0.034906246, -20.421402, 0, -30.730015)
+
+[node name="Double Music Note" parent="Background" index="6"]
+transform = Transform3D(0.034364987, 0.7016731, -3.937826, -0.0061231935, 3.937976, 0.7016464, 3.9998477, 0, 0.034906246, -13.956704, -10.261585, -60.5496)
+
+[node name="Double Music Note2" parent="Background" index="7"]
+transform = Transform3D(2.7250307, 0, -2.9281747, 0.33894202, 3.9731126, 0.3154277, 2.908492, -0.46300793, 2.7067134, -30.911718, -21.675999, -34.239243)
+
+[node name="Double Music Note3" parent="Background" index="8"]
+transform = Transform3D(-3.3660054, 0, -2.16102, 0, 4, 0, 2.16102, 0, -3.3660054, 14.359711, -9.589153, -14.152006)

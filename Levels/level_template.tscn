@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://colbenhotb1vv"]
+[gd_scene load_steps=13 format=3 uid="uid://colbenhotb1vv"]
 
 [ext_resource type="Script" uid="uid://ci3be4g87846j" path="res://Scripts/level.gd" id="1_gbce7"]
 [ext_resource type="PackedScene" uid="uid://clygl7b02goqu" path="res://Scenes/ground.tscn" id="2_rbi8j"]
 [ext_resource type="PackedScene" uid="uid://cm2aqjkuntn0h" path="res://Scenes/game_ui.tscn" id="3_rshia"]
 [ext_resource type="PackedScene" uid="uid://csl17lkggtans" path="res://Scenes/Menus/pause_menu.tscn" id="4_02uie"]
 [ext_resource type="PackedScene" uid="uid://dluav450y5end" path="res://Scenes/player.tscn" id="5_fksqx"]
+[ext_resource type="PackedScene" uid="uid://bdya3qf8lahgc" path="res://Assets/Meshes/speaker.tscn" id="6_4p0jq"]
+[ext_resource type="PackedScene" uid="uid://dxpdbjepny6sr" path="res://Assets/Meshes/disco_sphere.tscn" id="7_qcxce"]
+[ext_resource type="PackedScene" uid="uid://82ploxauglxb" path="res://Assets/Meshes/music_note.tscn" id="8_4autd"]
+[ext_resource type="PackedScene" uid="uid://n7qgp2yjx7ki" path="res://Assets/Meshes/double_music_note.tscn" id="9_2i2tq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbce7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -58,3 +62,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Trigger Buttons" type="Node3D" parent="."]
 
 [node name="Jump Pads" type="Node3D" parent="."]
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="Speaker" parent="Background" instance=ExtResource("6_4p0jq")]
+transform = Transform3D(3.4032445, 0, -2.1018867, 0, 4, 0, 2.1018867, 0, 3.4032445, -29.800785, 0, 0)
+
+[node name="Speaker2" parent="Background" instance=ExtResource("6_4p0jq")]
+transform = Transform3D(-2.0085192, 0, -3.4591691, 0, 4, 0, 3.4591691, 0, -2.0085192, 24.09517, 0, 0)
+
+[node name="Disco Sphere" parent="Background" instance=ExtResource("7_qcxce")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.10935593, 0, -22.767647)
+
+[node name="Music Note" parent="Background" instance=ExtResource("8_4autd")]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -20.421402, 0, -14.152006)
+
+[node name="Music Note2" parent="Background" instance=ExtResource("8_4autd")]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -20.421402, 0, -14.152006)
+
+[node name="Music Note3" parent="Background" instance=ExtResource("8_4autd")]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -20.421402, 0, -14.152006)
+
+[node name="Double Music Note" parent="Background" instance=ExtResource("9_2i2tq")]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -20.421402, 0, -14.152006)
+
+[node name="Double Music Note2" parent="Background" instance=ExtResource("9_2i2tq")]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -20.421402, 0, -14.152006)
+
+[node name="Double Music Note3" parent="Background" instance=ExtResource("9_2i2tq")]
+transform = Transform3D(0.034906246, 0, -3.9998477, 0, 4, 0, 3.9998477, 0, 0.034906246, -20.421402, 0, -14.152006)

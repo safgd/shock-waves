@@ -19,3 +19,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 initial_wait_time = 1.5
 interval = 4.0
 ring_growth_speed = 1.2
+
+[node name="Background" parent="." index="9"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Disco Sphere" parent="Background" index="2"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.10935593, 29.36969, -22.767647)
+
+[node name="Music Note" parent="Background" index="3"]
+transform = Transform3D(2.6704988, 0, -2.977992, 0, 4, 0, 2.977992, 0, 2.6704988, -32.502136, 0, -14.152006)
+
+[node name="Music Note2" parent="Background" index="4"]
+transform = Transform3D(-2.094219, 0, -3.4079683, 0, 4, 0, 3.4079683, 0, -2.094219, 19.99798, -1.7037964, -14.152006)
+
+[node name="Music Note3" parent="Background" index="5"]
+transform = Transform3D(1.2606477, -0.4328303, -3.7713966, 0.1372173, 3.9765134, -0.41050392, 3.7936716, 0, 1.2680935, -20.421402, 0, -42.55827)
+
+[node name="Double Music Note" parent="Background" index="6"]
+transform = Transform3D(-1.6282859, 0, -3.6535857, 0, 4, 0, 3.6535857, 0, -1.6282859, 16.592041, -4.55992, -41.630035)
+
+[node name="Double Music Note2" parent="Background" index="7"]
+transform = Transform3D(0.034906246, 0, -3.9998481, 0, 4, 0, 3.9998481, 0, 0.034906246, -2.0506275, 0, -62.55752)
+
+[node name="Double Music Note3" parent="Background" index="8"]
+transform = Transform3D(2.579049, 0.7357367, -2.9676929, -0.48260927, 3.9317546, 0.5553349, 3.0192046, 0, 2.6238153, -38.684258, 0, -75.62727)

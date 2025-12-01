@@ -92,3 +92,30 @@ text = "Walk over every black floor tile to
 receive a coin and finish the level"
 font_size = 128
 outline_size = 64
+
+[node name="Speaker" parent="Background" index="0"]
+transform = Transform3D(-2.7122283, 0, -2.940037, 0, 4, 0, 2.940037, 0, -2.7122283, 54.581577, 0, -21.59062)
+
+[node name="Speaker2" parent="Background" index="1"]
+transform = Transform3D(3.481526, 0, -1.9695119, 0, 4, 0, 1.9695119, 0, 3.481526, -13.667324, 0, -32.533314)
+
+[node name="Disco Sphere" parent="Background" index="2"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18.280298, 8.045625, -21.277695)
+
+[node name="Music Note" parent="Background" index="3"]
+transform = Transform3D(2.1885, 0, -3.3482037, 0, 4, 0, 3.3482037, 0, 2.1885, 26.417625, 0, -55.002388)
+
+[node name="Music Note2" parent="Background" index="4"]
+transform = Transform3D(2.4127762, 0, -3.190378, 0, 4, 0, 3.190378, 0, 2.4127762, 7.1629963, -16.598263, -51.456783)
+
+[node name="Music Note3" parent="Background" index="5"]
+transform = Transform3D(3.4628792, 0, -2.0021157, 0, 4, 0, 2.0021157, 0, 3.4628792, -14.912224, -5.45877, -12.084715)
+
+[node name="Double Music Note" parent="Background" index="6"]
+transform = Transform3D(2.2323709, 0, -3.3191144, 0, 4, 0, 3.3191144, 0, 2.2323709, -13.667324, -8.585439, -54.663803)
+
+[node name="Double Music Note2" parent="Background" index="7"]
+transform = Transform3D(-2.4619856, 0, -3.1525586, 0, 4, 0, 3.1525586, 0, -2.4619856, 43.903877, 7.397891, -37.67875)
+
+[node name="Double Music Note3" parent="Background" index="8"]
+transform = Transform3D(-0.24098897, 0, -3.992734, 0, 4, 0, 3.992734, 0, -0.24098897, 37.151512, -15.402519, -52.680912)

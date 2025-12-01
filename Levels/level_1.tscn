@@ -31,3 +31,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
 
 [node name="Quarter Coin Collectable4" parent="Collectables" index="4" instance=ExtResource("4_rf6l5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="Speaker" parent="Background" index="0"]
+transform = Transform3D(-2.7621984, 1.2683442, -2.6003006, 1.6456685, 3.6456637, 0.030109704, 2.3795033, -1.0490161, -3.0393305, 11.196219, -1.3501635, -18.416084)
+
+[node name="Speaker2" parent="Background" index="1"]
+transform = Transform3D(3.3198452, -0.9061632, -2.038994, 1.0911036, 3.8477354, 0.06651256, 1.9463098, -0.61139137, 3.440651, -13.667324, 0, -16.62922)
+
+[node name="Disco Sphere" parent="Background" index="2"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.028574944, 5.6968994, -27.308517)
+
+[node name="Music Note" parent="Background" index="3"]
+transform = Transform3D(2.0744367, 0, -3.4200459, 0, 4, 0, 3.4200459, 0, 2.0744367, -13.667324, -12.761833, 0)
+
+[node name="Music Note2" parent="Background" index="4"]
+transform = Transform3D(1.5025682, 0, -3.7070594, 0, 4, 0, 3.7070594, 0, 1.5025682, -3.7016602, -9.185705, -39.48741)
+
+[node name="Music Note3" parent="Background" index="5"]
+transform = Transform3D(1.4341886, 0, -3.7340465, 0, 4, 0, 3.7340465, 0, 1.4341886, 13.37937, -9.331262, 0.034693718)
+
+[node name="Double Music Note" parent="Background" index="6"]
+transform = Transform3D(0.7853496, -0.77577317, -3.8446589, 0.15526128, 3.924051, -0.7600776, 3.9190712, 0, 0.80054986, -13.667324, 0, -41.496723)
+
+[node name="Double Music Note2" parent="Background" index="7"]
+transform = Transform3D(-0.4243583, 1.4466935, -3.7049963, 0.1646233, 3.7292194, 1.4372966, 3.974018, 0, -0.4551712, 8.348547, -3.95014, -43.805614)
+
+[node name="Double Music Note3" parent="Background" index="8"]
+transform = Transform3D(-1.7361461, 0, -3.6035812, 0, 4, 0, 3.6035812, 0, -1.7361461, 10.482279, -13.031665, -18.344198)
